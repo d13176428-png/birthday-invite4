@@ -1,98 +1,134 @@
 :root{
-  --bg:#050505;
-  --white:#ffffff;
-  --gray:#a5a5a5;
-  --line:rgba(255,255,255,.12);
-  --glass:rgba(255,255,255,.05);
+    --black:#050505;
+    --white:#ffffff;
+    --gray:#a0a0a0;
+    --line:rgba(255,255,255,.12);
+    --glass:rgba(255,255,255,.06);
 }
 
 
 *{
-  box-sizing:border-box;
+    box-sizing:border-box;
 }
 
 
 html{
-  scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 
 body{
-  margin:0;
-  background:#050505;
-  color:white;
-  font-family:Arial, Helvetica, sans-serif;
+
+    margin:0;
+
+    background:var(--black);
+
+    color:white;
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
 }
 
 
 main{
-  max-width:1000px;
-  margin:auto;
+
+    max-width:1000px;
+
+    margin:auto;
+
 }
 
 
 section{
-  min-height:100vh;
-  padding:8vw;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  position:relative;
-  border-bottom:1px solid var(--line);
+
+    min-height:100vh;
+
+    padding:
+    8vw;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    position:relative;
+
+    border-bottom:
+    1px solid var(--line);
+
 }
 
 
+
 /* =====================
-   ПЕРВЫЙ ЭКРАН
+   HERO
 ===================== */
 
 
 .hero{
-  overflow:hidden;
-  isolation:isolate;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
 }
+
 
 
 .hero-bg{
 
-  position:absolute;
-  inset:0;
+    position:absolute;
 
-  background:
-  url("graffiti-bw.jpg")
-  center/cover no-repeat;
+    inset:0;
 
-  filter:
-  grayscale(100%)
-  contrast(120%);
 
-  transform:scale(1.05);
+    background:
+    url("graffiti-bw.jpg")
+    center/cover no-repeat;
 
-  z-index:-3;
+
+    filter:
+    grayscale(100%)
+    contrast(120%);
+
+
+    transform:scale(1.05);
+
+
+    z-index:-3;
+
 }
 
 
 
 .hero-overlay{
 
-  position:absolute;
-  inset:0;
+    position:absolute;
 
-  background:
+    inset:0;
 
-  linear-gradient(
-  180deg,
-  rgba(0,0,0,.25),
-  rgba(0,0,0,.9)
-  ),
 
-  radial-gradient(
-  circle at center,
-  transparent,
-  rgba(0,0,0,.8)
-  );
+    background:
 
-  z-index:-2;
+    linear-gradient(
+    180deg,
+    rgba(0,0,0,.25),
+    rgba(0,0,0,.88)
+    ),
+
+
+    radial-gradient(
+    circle at center,
+    transparent 20%,
+    rgba(0,0,0,.8)
+    );
+
+
+    z-index:-2;
 
 }
 
@@ -100,49 +136,52 @@ section{
 
 .hero-content{
 
-  max-width:750px;
+    max-width:800px;
 
-  animation:
-  show .8s ease;
+
+    animation:
+    appear .8s ease;
 
 }
 
 
 
-@keyframes show{
+@keyframes appear{
 
 from{
 
-opacity:0;
-transform:translateY(40px);
+    opacity:0;
+
+    transform:
+    translateY(40px);
 
 }
+
 
 to{
 
-opacity:1;
-transform:translateY(0);
+    opacity:1;
+
+    transform:
+    translateY(0);
 
 }
 
 }
-
 
 
 
 .label{
 
-font-size:12px;
+    font-size:12px;
 
-letter-spacing:5px;
+    letter-spacing:6px;
 
-color:#d0d0d0;
+    color:#cfcfcf;
 
-font-weight:800;
+    font-weight:800;
 
-margin-bottom:20px;
-
-text-transform:uppercase;
+    margin-bottom:20px;
 
 }
 
@@ -150,18 +189,24 @@ text-transform:uppercase;
 
 h1{
 
-font-size:
-clamp(55px,12vw,150px);
 
-line-height:.82;
+    font-size:
+    clamp(55px,12vw,150px);
 
-font-weight:900;
 
-letter-spacing:-4px;
+    line-height:.82;
 
-margin:0 0 30px;
 
-text-transform:uppercase;
+    font-weight:900;
+
+
+    letter-spacing:-5px;
+
+
+    margin:0 0 30px;
+
+
+    text-transform:uppercase;
 
 }
 
@@ -169,10 +214,12 @@ text-transform:uppercase;
 
 h1 span{
 
-color:transparent;
 
--webkit-text-stroke:
-2px white;
+    color:transparent;
+
+
+    -webkit-text-stroke:
+    2px white;
 
 }
 
@@ -180,18 +227,24 @@ color:transparent;
 
 h2{
 
-font-size:
-clamp(40px,8vw,90px);
 
-line-height:.9;
+    font-size:
+    clamp(42px,8vw,90px);
 
-font-weight:900;
 
-letter-spacing:-3px;
+    line-height:.9;
 
-margin:0 0 30px;
 
-text-transform:uppercase;
+    font-weight:900;
+
+
+    letter-spacing:-3px;
+
+
+    text-transform:uppercase;
+
+
+    margin:0 0 30px;
 
 }
 
@@ -199,15 +252,13 @@ text-transform:uppercase;
 
 .invite-text{
 
-max-width:550px;
+    max-width:550px;
 
-font-size:21px;
+    color:#ddd;
 
-line-height:1.6;
+    font-size:21px;
 
-color:#ddd;
-
-margin-bottom:35px;
+    line-height:1.6;
 
 }
 
@@ -215,11 +266,14 @@ margin-bottom:35px;
 
 .hero-info{
 
-display:flex;
 
-gap:15px;
+    display:flex;
 
-flex-wrap:wrap;
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
 
 }
 
@@ -227,38 +281,45 @@ flex-wrap:wrap;
 
 .hero-pill{
 
-padding:16px 25px;
 
-border-radius:50px;
+    padding:
+    15px 25px;
 
-background:
-rgba(255,255,255,.08);
 
-border:
-1px solid rgba(255,255,255,.2);
+    border-radius:50px;
 
-backdrop-filter:
-blur(12px);
 
-font-weight:900;
+    background:
+    rgba(255,255,255,.08);
+
+
+    border:
+    1px solid rgba(255,255,255,.18);
+
+
+    backdrop-filter:
+    blur(12px);
+
+
+    font-weight:800;
 
 }
 
 
 
 /* =====================
-   ЛОКАЦИЯ
+ LOCATION
 ===================== */
 
 
 .details{
 
-background:
-linear-gradient(
-180deg,
-#080808,
-#050505
-);
+    background:
+    linear-gradient(
+    180deg,
+    #090909,
+    #050505
+    );
 
 }
 
@@ -266,26 +327,31 @@ linear-gradient(
 
 .place-card{
 
-width:
-min(100%,680px);
 
-padding:35px 30px;
+    max-width:680px;
 
-margin-top:20px;
 
-border-radius:30px;
+    padding:
+    35px 30px;
 
-background:
-rgba(255,255,255,.05);
 
-border:
-1px solid rgba(255,255,255,.12);
+    background:
+    rgba(255,255,255,.05);
 
-backdrop-filter:
-blur(15px);
 
-box-shadow:
-0 25px 70px rgba(0,0,0,.5);
+    border:
+    1px solid rgba(255,255,255,.12);
+
+
+    border-radius:25px;
+
+
+    backdrop-filter:
+    blur(15px);
+
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.5);
 
 }
 
@@ -293,25 +359,26 @@ box-shadow:
 
 .place-badge{
 
-display:inline-block;
 
-padding:9px 16px;
+    display:inline-block;
 
-border-radius:50px;
 
-border:
-1px solid rgba(255,255,255,.15);
+    padding:
+    8px 16px;
 
-background:
-rgba(255,255,255,.05);
 
-font-size:12px;
+    border-radius:50px;
 
-font-weight:800;
 
-letter-spacing:3px;
+    border:
+    1px solid rgba(255,255,255,.2);
 
-color:#ddd;
+
+    font-size:12px;
+
+
+    letter-spacing:3px;
+
 
 }
 
@@ -319,14 +386,18 @@ color:#ddd;
 
 .place-name{
 
-margin:
-25px 0 20px;
 
-font-size:38px;
+    margin:
+    25px 0;
 
-font-weight:900;
 
-text-transform:uppercase;
+    font-size:40px;
+
+
+    font-weight:900;
+
+
+    text-transform:uppercase;
 
 }
 
@@ -334,15 +405,20 @@ text-transform:uppercase;
 
 .place-divider{
 
-height:1px;
 
-width:180px;
+    height:1px;
 
-background:white;
 
-opacity:.5;
+    width:200px;
 
-margin-bottom:25px;
+
+    background:white;
+
+
+    opacity:.5;
+
+
+    margin-bottom:25px;
 
 }
 
@@ -350,11 +426,12 @@ margin-bottom:25px;
 
 .place-address{
 
-font-size:18px;
 
-line-height:1.7;
+    font-size:18px;
 
-margin:0 0 20px;
+
+    line-height:1.7;
+
 
 }
 
@@ -362,13 +439,14 @@ margin:0 0 20px;
 
 .place-note{
 
-font-size:16px;
 
-line-height:1.6;
+    margin-top:25px;
 
-color:#aaa;
 
-margin-bottom:30px;
+    color:#aaa;
+
+
+    line-height:1.6;
 
 }
 
@@ -376,26 +454,33 @@ margin-bottom:30px;
 
 .map-button{
 
-display:inline-flex;
 
-justify-content:center;
+    display:inline-flex;
 
-align-items:center;
 
-padding:
-16px 30px;
+    margin-top:25px;
 
-border-radius:50px;
 
-background:white;
+    padding:
+    16px 30px;
 
-color:black;
 
-text-decoration:none;
+    background:white;
 
-font-weight:900;
 
-transition:.25s;
+    color:black;
+
+
+    border-radius:50px;
+
+
+    text-decoration:none;
+
+
+    font-weight:900;
+
+
+    transition:.25s;
 
 }
 
@@ -403,93 +488,203 @@ transition:.25s;
 
 .map-button:hover{
 
-transform:
-translateY(-3px);
 
-box-shadow:
-0 15px 40px rgba(255,255,255,.2);
+    transform:
+    translateY(-3px);
 
 }
 
 
 
 /* =====================
-   ТАЙМЕР
+ DRESS CODE
 ===================== */
 
 
-.timer{
+.dress-section{
 
-display:grid;
 
-grid-template-columns:
-repeat(4,1fr);
-
-gap:15px;
-
-margin-top:20px;
+    background:
+    #070707;
 
 }
 
 
 
-.timer-box{
-
-padding:30px 15px;
-
-text-align:center;
-
-background:
-rgba(255,255,255,.04);
-
-border:
-1px solid rgba(255,255,255,.1);
-
-border-radius:25px;
-
-backdrop-filter:
-blur(10px);
-
-}
+.dress-code{
 
 
+    max-width:650px;
 
-.timer-box b{
 
-display:block;
+    padding:
+    40px 30px;
 
-font-size:
-clamp(40px,6vw,70px);
 
-font-weight:900;
+    background:
+    rgba(255,255,255,.04);
+
+
+    border:
+    1px solid rgba(255,255,255,.15);
+
+
+    border-radius:20px;
+
+
+    backdrop-filter:
+    blur(12px);
 
 }
 
 
 
-.timer-box span{
+.dress-line{
 
-color:#999;
 
-font-size:12px;
+    display:flex;
 
-letter-spacing:3px;
 
-text-transform:uppercase;
+    align-items:center;
+
+
+    gap:20px;
+
+
+    letter-spacing:5px;
+
+}
+
+
+
+.dress-line span{
+
+
+    height:1px;
+
+
+    background:#777;
+
+
+    flex:1;
+
+}
+
+
+
+.dress-code h2{
+
+
+    margin-top:35px;
+
+
+    font-family:serif;
+
+
+    font-size:60px;
+
+
+    font-weight:400;
+
+
+    text-transform:none;
+
+}
+
+
+
+.dress-code p{
+
+
+    font-family:serif;
+
+
+    font-size:22px;
+
+
+    line-height:1.6;
+
+
+    color:#ddd;
+
+}
+
+
+
+.dress-code b{
+
+
+    color:white;
+
+
+    letter-spacing:4px;
+
+}
+
+
+
+.colors{
+
+
+    display:flex;
+
+
+    gap:25px;
+
+
+    margin-top:35px;
+
+}
+
+
+
+.color{
+
+
+    width:65px;
+
+
+    height:65px;
+
+
+    border-radius:50%;
+
+}
+
+
+
+.color.white{
+
+
+    background:white;
+
+
+}
+
+
+
+.color.black{
+
+
+    background:#111;
+
+
+    border:
+    1px solid #444;
 
 }
 
 
 
 /* =====================
-   ФОРМА
+ FORM
 ===================== */
 
 
 .rsvp-form{
 
-width:
-min(100%,620px);
+
+    max-width:620px;
 
 }
 
@@ -500,36 +695,31 @@ select,
 textarea,
 button{
 
-width:100%;
 
-padding:18px;
-
-margin:
-10px 0;
-
-border-radius:18px;
-
-border:
-1px solid rgba(255,255,255,.12);
-
-background:
-rgba(255,255,255,.05);
-
-color:white;
-
-font-size:16px;
-
-outline:none;
-
-}
+    width:100%;
 
 
+    padding:18px;
 
-input:focus,
-select:focus,
-textarea:focus{
 
-border-color:white;
+    margin:10px 0;
+
+
+    border-radius:18px;
+
+
+    background:
+    rgba(255,255,255,.05);
+
+
+    border:
+    1px solid rgba(255,255,255,.15);
+
+
+    color:white;
+
+
+    font-size:16px;
 
 }
 
@@ -537,9 +727,8 @@ border-color:white;
 
 textarea{
 
-min-height:130px;
 
-resize:vertical;
+    min-height:130px;
 
 }
 
@@ -547,41 +736,24 @@ resize:vertical;
 
 button{
 
-background:white;
 
-color:black;
-
-font-weight:900;
-
-cursor:pointer;
-
-transition:.25s;
-
-}
+    background:white;
 
 
-
-button:hover{
-
-transform:
-translateY(-3px);
-
-}
+    color:black;
 
 
+    font-weight:900;
 
-#formMessage{
 
-color:white;
-
-min-height:20px;
+    cursor:pointer;
 
 }
 
 
 
 /* =====================
-   МОБИЛЬНАЯ ВЕРСИЯ
+ MOBILE
 ===================== */
 
 
@@ -590,8 +762,8 @@ min-height:20px;
 
 section{
 
-padding:
-12vw 7vw;
+    padding:
+    12vw 7vw;
 
 }
 
@@ -599,8 +771,7 @@ padding:
 
 h1{
 
-font-size:
-58px;
+    font-size:58px;
 
 }
 
@@ -608,8 +779,7 @@ font-size:
 
 h2{
 
-font-size:
-42px;
+    font-size:42px;
 
 }
 
@@ -617,7 +787,7 @@ font-size:
 
 .invite-text{
 
-font-size:18px;
+    font-size:18px;
 
 }
 
@@ -625,18 +795,9 @@ font-size:18px;
 
 .hero-pill{
 
-width:100%;
+    width:100%;
 
-text-align:center;
-
-}
-
-
-
-.place-card{
-
-padding:
-25px 20px;
+    text-align:center;
 
 }
 
@@ -644,7 +805,7 @@ padding:
 
 .place-name{
 
-font-size:30px;
+    font-size:30px;
 
 }
 
@@ -652,7 +813,7 @@ font-size:30px;
 
 .place-address{
 
-font-size:16px;
+    font-size:16px;
 
 }
 
@@ -660,16 +821,9 @@ font-size:16px;
 
 .map-button{
 
-width:100%;
+    width:100%;
 
-}
-
-
-
-.timer{
-
-grid-template-columns:
-repeat(2,1fr);
+    justify-content:center;
 
 }
 
