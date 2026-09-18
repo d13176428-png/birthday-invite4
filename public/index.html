@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Приглашение — Максим Кабанков</title>
@@ -10,20 +13,31 @@
 
 </head>
 
+
 <body>
 
 
+<main>
+
+
+<!-- ГЛАВНЫЙ ЭКРАН -->
+
 <section class="hero">
 
+
 <div class="hero-bg"></div>
+
 <div class="hero-overlay"></div>
+
 
 
 <div class="hero-content">
 
+
 <p class="label">
 ПРИГЛАШЕНИЕ
 </p>
+
 
 
 <h1>
@@ -32,30 +46,36 @@
 </h1>
 
 
+
 <p class="invite-text">
 
 Приглашаю тебя на мой день рождения.<br>
-Будет уютная атмосфера, музыка и хорошая компания.
+
+Буду рад видеть тебя на своём празднике.
 
 </p>
 
 
+
 <div class="hero-info">
 
-<div class="hero-pill">
-📅 НАЧАЛО В 14:00
-</div>
-
 
 <div class="hero-pill">
-🏠 ХИЖИНА КАБАНА
+27.09.26
+</div>
+
+
+<div class="hero-pill">
+НАЧАЛО В 14:00
 </div>
 
 
 </div>
 
 
+
 </div>
+
 
 </section>
 
@@ -63,12 +83,16 @@
 
 
 
+<!-- МЕСТО -->
+
+
 <section class="details">
 
 
 <p class="label">
-МЕСТО ПРОВЕДЕНИЯ
+ЛОКАЦИЯ
 </p>
+
 
 
 <h2>
@@ -78,12 +102,14 @@
 
 
 
+
 <div class="place-card">
 
 
 <div class="place-badge">
-АДРЕС
+МЕСТО ПРОВЕДЕНИЯ
 </div>
+
 
 
 <p class="place-name">
@@ -109,18 +135,19 @@
 
 <p class="place-note">
 
-Собираемся вместе отметить этот день.<br>
-Жду тебя в гости ❤️
+Закрытая домашняя тусовка.<br>
+Своя атмосфера, свои люди.
 
 </p>
 
 
 
-<a class="map-button"
+<a 
+class="map-button"
 href="https://yandex.ru/maps/?text=Береговая+улица+11,+посёлок+радиоцентра+Романцево,+городской+округ+Подольск,+Московская+область"
 target="_blank">
 
-ОТКРЫТЬ КАРТУ
+ОТКРЫТЬ МАРШРУТ
 
 </a>
 
@@ -136,64 +163,73 @@ target="_blank">
 
 
 
-<section>
+<!-- ДРЕСС КОД -->
 
 
-<p class="label">
-ПОДТВЕРЖДЕНИЕ
-</p>
+<section class="dress-section">
+
+
+<div class="dress-code">
+
+
+<div class="dress-line">
+
+<span></span>
+
+M
+
+<span></span>
+
+</div>
+
+
 
 
 <h2>
-ТЫ БУДЕШЬ?
+Дресс-код
 </h2>
 
 
 
-<form class="rsvp-form">
+
+<p>
+
+Вечеринка в стиле —
+
+<br>
+
+<b>
+BLACK AND WHITE
+</b>
+
+<br><br>
 
 
-<input 
-type="text"
-placeholder="Твоё имя"
-id="name"
->
+Будем рады, если вы
+поддержите элегантный стиль
+вечера и выберете наряды
+в предложенной палитре.
 
 
-<select id="answer">
-
-<option>
-Я приду
-</option>
-
-<option>
-Не смогу прийти
-</option>
-
-</select>
-
-
-
-<textarea
-id="message"
-placeholder="Сообщение"
-></textarea>
+</p>
 
 
 
-<button type="button" onclick="sendForm()">
 
-ПОДТВЕРДИТЬ
-
-</button>
+<div class="colors">
 
 
+<div class="color white"></div>
 
-<p id="formMessage"></p>
+
+<div class="color black"></div>
 
 
-</form>
+</div>
 
+
+
+</div>
 
 
 </section>
@@ -202,8 +238,99 @@ placeholder="Сообщение"
 
 
 
+
+
+<!-- ФОРМА -->
+
+
+<section class="rsvp-section">
+
+
+<p class="label">
+ПОДТВЕРЖДЕНИЕ
+</p>
+
+
+
+<h2>
+ТЫ БУДЕШЬ?
+</h2>
+
+
+
+
+<form id="rsvpForm" class="rsvp-form">
+
+
+<input 
+id="name"
+placeholder="Твоё имя"
+required>
+
+
+
+<input
+id="guests"
+type="number"
+min="1"
+value="1"
+placeholder="Количество гостей"
+>
+
+
+
+
+<select id="status">
+
+<option value="yes">
+Я приду 🖤
+</option>
+
+
+<option value="no">
+Не смогу прийти
+</option>
+
+
+</select>
+
+
+
+
+<textarea 
+id="comment"
+placeholder="Комментарий">
+</textarea>
+
+
+
+
+<button>
+ПОДТВЕРДИТЬ УЧАСТИЕ
+</button>
+
+
+
+
+<p id="formMessage"></p>
+
+
+
+</form>
+
+
+</section>
+
+
+
+
+</main>
+
+
+
 <script src="script.js"></script>
 
 
 </body>
+
 </html>
