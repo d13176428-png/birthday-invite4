@@ -1,27 +1,209 @@
-<div class="place-card">
-  <p class="place-title">МЕСТО ПРОВЕДЕНИЯ</p>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <p class="place-name">
-    ХИЖИНА КАБАНА
-  </p>
+<title>Приглашение — Максим Кабанков</title>
 
-  <p class="place-address">
-    Береговая улица, 11,<br>
-    посёлок радиоцентра Романцево,<br>
-    городской округ Подольск,<br>
-    Московская область
-  </p>
+<link rel="stylesheet" href="style.css">
 
-  <p class="place-note">
-    Закрытая домашняя тусовка.
-    Всё будет уютно, громко и с правильной атмосферой.
-  </p>
+</head>
 
-  <a 
-    class="map-button"
-    href="https://yandex.ru/maps/?text=Береговая+улица+11,+посёлок+радиоцентра+Романцево,+городской+округ+Подольск,+Московская+область"
-    target="_blank"
-    rel="noopener">
-    ОТКРЫТЬ МАРШРУТ
-  </a>
+<body>
+
+
+<section class="hero">
+
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+
+
+<div class="hero-content">
+
+<p class="label">
+ПРИГЛАШЕНИЕ
+</p>
+
+
+<h1>
+ОТ МАКСИМА<br>
+<span>КАБАНКОВА</span>
+</h1>
+
+
+<p class="invite-text">
+
+Приглашаю тебя на мой день рождения.<br>
+Будет уютная атмосфера, музыка и хорошая компания.
+
+</p>
+
+
+<div class="hero-info">
+
+<div class="hero-pill">
+📅 НАЧАЛО В 14:00
 </div>
+
+
+<div class="hero-pill">
+🏠 ХИЖИНА КАБАНА
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section class="details">
+
+
+<p class="label">
+МЕСТО ПРОВЕДЕНИЯ
+</p>
+
+
+<h2>
+ХИЖИНА<br>
+КАБАНА
+</h2>
+
+
+
+<div class="place-card">
+
+
+<div class="place-badge">
+АДРЕС
+</div>
+
+
+<p class="place-name">
+Хата моя
+</p>
+
+
+
+<div class="place-divider"></div>
+
+
+
+<p class="place-address">
+
+Береговая улица, 11,<br>
+посёлок радиоцентра Романцево,<br>
+городской округ Подольск,<br>
+Московская область
+
+</p>
+
+
+
+<p class="place-note">
+
+Собираемся вместе отметить этот день.<br>
+Жду тебя в гости ❤️
+
+</p>
+
+
+
+<a class="map-button"
+href="https://yandex.ru/maps/?text=Береговая+улица+11,+посёлок+радиоцентра+Романцево,+городской+округ+Подольск,+Московская+область"
+target="_blank">
+
+ОТКРЫТЬ КАРТУ
+
+</a>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section>
+
+
+<p class="label">
+ПОДТВЕРЖДЕНИЕ
+</p>
+
+
+<h2>
+ТЫ БУДЕШЬ?
+</h2>
+
+
+
+<form class="rsvp-form">
+
+
+<input 
+type="text"
+placeholder="Твоё имя"
+id="name"
+>
+
+
+<select id="answer">
+
+<option>
+Я приду
+</option>
+
+<option>
+Не смогу прийти
+</option>
+
+</select>
+
+
+
+<textarea
+id="message"
+placeholder="Сообщение"
+></textarea>
+
+
+
+<button type="button" onclick="sendForm()">
+
+ПОДТВЕРДИТЬ
+
+</button>
+
+
+
+<p id="formMessage"></p>
+
+
+</form>
+
+
+
+</section>
+
+
+
+
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
