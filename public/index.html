@@ -1,336 +1,280 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Приглашение — Максим Кабанков</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#050505" />
+  <link rel="manifest" href="manifest.json" />
+  <title>Приглашение — Максим Кабанков</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
-
 <body>
 
-
-<main>
-
-
-<!-- ГЛАВНЫЙ ЭКРАН -->
-
-<section class="hero">
-
-
-<div class="hero-bg"></div>
-
-<div class="hero-overlay"></div>
-
-
-
-<div class="hero-content">
-
-
-<p class="label">
-ПРИГЛАШЕНИЕ
-</p>
-
-
-
-<h1>
-ОТ МАКСИМА<br>
-<span>КАБАНКОВА</span>
-</h1>
-
-
-
-<p class="invite-text">
-
-Приглашаю тебя на мой день рождения.<br>
-
-Буду рад видеть тебя на своём празднике.
-
-</p>
-
-
-
-<div class="hero-info">
-
-
-<div class="hero-pill">
-27.09.26
-</div>
-
-
-<div class="hero-pill">
-НАЧАЛО В 14:00
-</div>
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<!-- МЕСТО -->
-
-
-<section class="details">
-
-
-<p class="label">
-ЛОКАЦИЯ
-</p>
-
-
-
-<h2>
-ХИЖИНА<br>
-КАБАНА
-</h2>
-
-
-
-
-<div class="place-card">
-
-
-<div class="place-badge">
-МЕСТО ПРОВЕДЕНИЯ
-</div>
-
-
-
-<p class="place-name">
-Хата моя
-</p>
-
-
-
-<div class="place-divider"></div>
-
-
-
-<p class="place-address">
-
-Береговая улица, 11,<br>
-посёлок радиоцентра Романцево,<br>
-городской округ Подольск,<br>
-Московская область
-
-</p>
-
-
-
-<p class="place-note">
-
-Закрытая домашняя тусовка.<br>
-Своя атмосфера, свои люди.
-
-</p>
-
-
-
-<a 
-class="map-button"
-href="https://yandex.ru/maps/?text=Береговая+улица+11,+посёлок+радиоцентра+Романцево,+городской+округ+Подольск,+Московская+область"
-target="_blank">
-
-ОТКРЫТЬ МАРШРУТ
-
-</a>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<!-- ДРЕСС КОД -->
-
-
-<section class="dress-section">
-
-
-<div class="dress-code">
-
-
-<div class="dress-line">
-
-<span></span>
-
-
-
-<span></span>
-
-</div>
-
-
-
-
-<h2>
-Дресс-код
-</h2>
-
-
-
-
-<p>
-
-Вечеринка в стиле —
-
-<br>
-
-<b>
-BLACK AND WHITE
-</b>
-
-<br><br>
-
-
-Будем рады, если вы
-поддержите элегантный стиль
-вечера и выберете наряды
-в предложенной палитре.
-
-
-</p>
-
-
-
-
-<div class="colors">
-
-
-<div class="color white"></div>
-
-
-<div class="color black"></div>
-
-
-</div>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-
-<!-- ФОРМА -->
-
-
-<section class="rsvp-section">
-
-
-<p class="label">
-ПОДТВЕРЖДЕНИЕ
-</p>
-
-
-
-<h2>
-ТЫ БУДЕШЬ?
-</h2>
-
-
-
-
-<form id="rsvpForm" class="rsvp-form">
-
-
-<input 
-id="name"
-placeholder="Твоё имя"
-required>
-
-
-
-<input
-id="guests"
-type="number"
-min="1"
-value="1"
-placeholder="Количество гостей"
->
-
-
-
-
-<select id="status">
-
-<option value="yes">
-Я приду 🖤
-</option>
-
-
-<option value="no">
-Не смогу прийти
-</option>
-
-
-</select>
-
-
-
-
-<textarea 
-id="comment"
-placeholder="Комментарий">
-</textarea>
-
-
-
-
-<button>
-ПОДТВЕРДИТЬ УЧАСТИЕ
-</button>
-
-
-
-
-<p id="formMessage"></p>
-
-
-
-</form>
-
-
-</section>
-
-
-
-
-</main>
-
-
-
-<script src="script.js"></script>
-
-
+  <div class="noise"></div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-smoke hero-smoke-1"></div>
+      <div class="hero-smoke hero-smoke-2"></div>
+
+      <div class="hero-corner">
+        <span>27</span>
+        <span>SEP</span>
+        <span>2026</span>
+      </div>
+
+      <div class="hero-side-label">
+        MAXIM PARTY / BLACK & WHITE / PRIVATE EVENT
+      </div>
+
+      <div class="hero-content">
+        <p class="label">PRIVATE EVENT</p>
+
+        <h1>
+          ОТ МАКСИМА<br>
+          <span>КАБАНКОВА</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          BLACK & WHITE PARTY
+        </p>
+
+        <p class="invite-text">
+          Приглашаю тебя на мой день рождения.<br>
+          Буду рад видеть тебя на своём празднике.
+        </p>
+
+        <div class="hero-info">
+          <div class="hero-pill">27.09.26</div>
+          <div class="hero-pill">НАЧАЛО В 14:00</div>
+          <div class="hero-pill">PRIVATE NIGHT</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- TIMER -->
+    <section class="countdown-section">
+      <p class="label">ОБРАТНЫЙ ОТСЧЁТ</p>
+
+      <h2>
+        ДО ВСТРЕЧИ<br>
+        ОСТАЛОСЬ
+      </h2>
+
+      <div class="timer">
+        <div class="timer-box">
+          <b id="days">00</b>
+          <span>ДНЕЙ</span>
+        </div>
+
+        <div class="timer-box">
+          <b id="hours">00</b>
+          <span>ЧАСОВ</span>
+        </div>
+
+        <div class="timer-box">
+          <b id="minutes">00</b>
+          <span>МИНУТ</span>
+        </div>
+
+        <div class="timer-box">
+          <b id="seconds">00</b>
+          <span>СЕКУНД</span>
+        </div>
+      </div>
+
+      <p class="section-note">
+        Один вечер. Своя атмосфера. Свои люди.
+      </p>
+    </section>
+
+
+    <!-- PLACE -->
+    <section class="details">
+      <p class="label">ЛОКАЦИЯ</p>
+
+      <h2>
+        ХИЖИНА<br>
+        КАБАНА
+      </h2>
+
+      <div class="place-card">
+        <div class="place-badge">
+          МЕСТО ПРОВЕДЕНИЯ
+        </div>
+
+        <p class="place-name">
+          Хата моя
+        </p>
+
+        <div class="place-divider"></div>
+
+        <p class="place-address">
+          Береговая улица, 11,<br>
+          посёлок радиоцентра Романцево,<br>
+          городской округ Подольск,<br>
+          Московская область
+        </p>
+
+        <p class="place-note">
+          Закрытая домашняя тусовка.<br>
+          Своя атмосфера, музыка и нормальный движ.
+        </p>
+
+        <a
+          class="map-button"
+          href="https://yandex.ru/maps/?text=Береговая+улица+11,+посёлок+радиоцентра+Романцево,+городской+округ+Подольск,+Московская+область"
+          target="_blank"
+          rel="noopener"
+        >
+          ОТКРЫТЬ МАРШРУТ
+        </a>
+      </div>
+    </section>
+
+
+    <!-- DRESS CODE -->
+    <section class="dress-section">
+      <p class="label">СТИЛЬ ВЕЧЕРА</p>
+
+      <div class="dress-code">
+        <h2>Дресс-код</h2>
+
+        <p>
+          Вечеринка в стиле —
+          <br>
+          <b>BLACK AND WHITE</b>
+          <br><br>
+          Будем рады, если вы поддержите элегантный стиль вечера
+          и выберете наряды в предложенной палитре.
+        </p>
+
+        <div class="colors">
+          <div class="color white" title="White"></div>
+          <div class="color black" title="Black"></div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- RSVP -->
+    <section class="rsvp-section" id="rsvp">
+      <p class="label">ПОДТВЕРЖДЕНИЕ</p>
+
+      <h2>
+        ТЫ С НАМИ?
+      </h2>
+
+      <p class="section-note">
+        Подтверди участие, чтобы я знал, кого ждать.
+      </p>
+
+      <form id="rsvpForm" class="rsvp-form">
+        <input
+          id="name"
+          type="text"
+          placeholder="Твоё имя"
+          required
+        />
+
+        <input
+          id="guests"
+          type="number"
+          min="1"
+          value="1"
+          placeholder="Количество гостей"
+        />
+
+        <select id="status">
+          <option value="yes">Я приду 🖤</option>
+          <option value="no">Не смогу прийти</option>
+        </select>
+
+        <textarea
+          id="comment"
+          placeholder="Комментарий"
+        ></textarea>
+
+        <button id="submitBtn" type="submit">
+          ПОДТВЕРДИТЬ УЧАСТИЕ
+        </button>
+
+        <p id="formMessage"></p>
+      </form>
+    </section>
+
+
+    <!-- FINAL BLOCK -->
+    <section class="final-section">
+      <p class="label">SEE YOU THERE</p>
+
+      <h2>
+        YOU ARE<br>
+        INVITED
+      </h2>
+
+      <p class="final-text">
+        Максим ждёт тебя.<br>
+        До встречи на BLACK & WHITE PARTY.
+      </p>
+
+      <div class="final-meta">
+        <div>27.09.2026</div>
+        <div>START 14:00</div>
+        <div>MAXIM KABANKOV</div>
+      </div>
+
+      <a
+        class="map-button"
+        href="https://yandex.ru/maps/?text=Береговая+улица+11,+посёлок+радиоцентра+Романцево,+городской+округ+Подольск,+Московская+область"
+        target="_blank"
+        rel="noopener"
+      >
+        ОТКРЫТЬ МАРШРУТ
+      </a>
+    </section>
+
+  </main>
+
+
+  <!-- SUCCESS POPUP -->
+  <div class="success-overlay" id="successOverlay">
+    <div class="success-card">
+      <div class="success-mark">✓</div>
+
+      <p class="label">ГОТОВО</p>
+
+      <h3>
+        ТЫ В СПИСКЕ
+      </h3>
+
+      <p class="success-text">
+        <span id="successName">Спасибо</span>, твой ответ отправлен.<br>
+        Максим ждёт тебя на тусовке.
+      </p>
+
+      <div class="success-actions">
+        <button class="success-btn" id="closeSuccessBtn" type="button">
+          ЗАКРЫТЬ
+        </button>
+
+        <a
+          class="success-link"
+          href="https://yandex.ru/maps/?text=Береговая+улица+11,+посёлок+радиоцентра+Романцево,+городской+округ+Подольск,+Московская+область"
+          target="_blank"
+          rel="noopener"
+        >
+          МАРШРУТ
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
