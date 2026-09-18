@@ -1569,3 +1569,283 @@ h2{
 
 
 }
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+
+section > *{
+
+    animation:
+    fadeUp .8s ease both;
+
+}
+
+
+
+section > *:nth-child(2){
+
+    animation-delay:.15s;
+
+}
+
+
+
+section > *:nth-child(3){
+
+    animation-delay:.25s;
+
+}
+
+
+
+section > *:nth-child(4){
+
+    animation-delay:.35s;
+
+}
+
+
+
+@keyframes fadeUp{
+
+
+from{
+
+    opacity:0;
+
+    transform:
+    translateY(35px);
+
+    filter:blur(8px);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+
+    filter:blur(0);
+
+}
+
+
+}
+
+
+
+
+
+/* =========================
+   КРАСИВЫЕ РАЗДЕЛИТЕЛИ
+========================= */
+
+
+section::after{
+
+    content:"";
+
+
+    position:absolute;
+
+
+    bottom:0;
+
+
+    left:8%;
+
+
+    width:84%;
+
+
+    height:1px;
+
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    transparent,
+
+    rgba(255,255,255,.25),
+
+    transparent
+
+    );
+
+
+}
+
+
+
+
+/* =========================
+   СТЕКЛО С ЖИВЫМ ЭФФЕКТОМ
+========================= */
+
+
+.place-card,
+.dress-code,
+.timer-box,
+.success-card{
+
+
+    transition:
+
+    transform .35s ease,
+
+    border-color .35s ease;
+
+
+}
+
+
+
+.place-card:hover,
+.dress-code:hover,
+.timer-box:hover{
+
+
+    transform:
+    translateY(-8px);
+
+
+    border-color:
+
+    rgba(255,255,255,.35);
+
+
+}
+
+
+
+
+
+
+/* =========================
+   МЯГКОЕ СВЕЧЕНИЕ
+========================= */
+
+
+.hero::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:400px;
+
+
+    height:400px;
+
+
+    top:20%;
+
+
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    rgba(255,255,255,.08),
+
+    transparent 70%
+
+    );
+
+
+    pointer-events:none;
+
+
+}
+
+
+
+
+
+/* =========================
+   КНОПКИ
+========================= */
+
+
+.map-button,
+button{
+
+
+    position:relative;
+
+    overflow:hidden;
+
+
+}
+
+
+
+.map-button::before,
+button::before{
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    top:0;
+
+
+    left:-100%;
+
+
+    width:100%;
+
+
+    height:100%;
+
+
+    background:
+
+    linear-gradient(
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,.5),
+
+    transparent
+
+    );
+
+
+    transition:.5s;
+
+
+}
+
+
+
+.map-button:hover::before,
+button:hover::before{
+
+
+    left:100%;
+
+
+}
