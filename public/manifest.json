@@ -1,0 +1,8 @@
+{
+"name":"День рождения Максима",
+"short_name":"Максим",
+"display":"standalone",
+"background_color":"#050505",
+"theme_color":"#050505",
+"start_url":"/"
+}
