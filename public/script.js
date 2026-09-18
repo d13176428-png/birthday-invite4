@@ -1,95 +1,64 @@
 // =========================
-// COUNTDOWN
+// ТАЙМЕР
 // =========================
 
 const partyDate = new Date("2026-09-27T14:00:00+03:00");
-
-
-function setText(id, value){
-
-    const element = document.getElementById(id);
-
-    if(element){
-
-        element.textContent = value;
-
-    }
-
-}
-
 
 
 function updateTimer(){
 
     const now = new Date();
 
-    const difference = partyDate - now;
+    const diff = partyDate - now;
 
 
+    if(diff <= 0){
 
-    if(difference <= 0){
-
-        setText("days","00");
-        setText("hours","00");
-        setText("minutes","00");
-        setText("seconds","00");
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
 
         return;
 
     }
 
 
-
     const days = Math.floor(
-        difference /
-        (1000 * 60 * 60 * 24)
+        diff / (1000 * 60 * 60 * 24)
     );
 
 
     const hours = Math.floor(
-        difference /
-        (1000 * 60 * 60)
-        % 24
+        diff / (1000 * 60 * 60) % 24
     );
 
 
     const minutes = Math.floor(
-        difference /
-        (1000 * 60)
-        % 60
+        diff / (1000 * 60) % 60
     );
 
 
     const seconds = Math.floor(
-        difference /
-        1000
-        % 60
+        diff / 1000 % 60
     );
 
 
 
-    setText(
-        "days",
-        String(days).padStart(2,"0")
-    );
+    document.getElementById("days").textContent =
+        String(days).padStart(2,"0");
 
 
-    setText(
-        "hours",
-        String(hours).padStart(2,"0")
-    );
+    document.getElementById("hours").textContent =
+        String(hours).padStart(2,"0");
 
 
-    setText(
-        "minutes",
-        String(minutes).padStart(2,"0")
-    );
+    document.getElementById("minutes").textContent =
+        String(minutes).padStart(2,"0");
 
 
-    setText(
-        "seconds",
-        String(seconds).padStart(2,"0")
-    );
+    document.getElementById("seconds").textContent =
+        String(seconds).padStart(2,"0");
 
 }
 
@@ -103,7 +72,7 @@ updateTimer();
 
 
 // =========================
-// MUSIC AUTOPLAY FADE IN
+// МУЗЫКА
 // =========================
 
 
@@ -117,7 +86,9 @@ if(music){
 
 
 
-    window.addEventListener("load", async()=>{
+    window.addEventListener(
+        "load",
+        async()=>{
 
 
         try{
@@ -147,32 +118,28 @@ if(music){
                     clearInterval(fade);
 
 
-                    return;
+                }
+                else{
+
+
+                    music.volume = volume;
+
 
                 }
-
-
-
-                music.volume = volume;
-
 
 
             },100);
 
 
 
-            console.log(
-                "Музыка запущена"
-            );
-
-
         }
+
 
         catch(error){
 
 
             console.log(
-                "Автозапуск музыки заблокирован браузером"
+                "Автозапуск музыки запрещён браузером"
             );
 
 
@@ -183,6 +150,7 @@ if(music){
     });
 
 
+
 }
 
 
@@ -190,9 +158,8 @@ if(music){
 
 
 
-
 // =========================
-// RSVP FORM
+// ФОРМА TELEGRAM
 // =========================
 
 
@@ -209,39 +176,22 @@ document.getElementById("submitBtn");
 
 
 
-const successOverlay =
+const popup =
 document.getElementById("successOverlay");
 
 
-
-const successName =
-document.getElementById("successName");
-
-
-
-const closeSuccessBtn =
+const closePopup =
 document.getElementById("closeSuccessBtn");
 
 
 
 
-
-function openSuccess(name){
-
-
-    if(successName){
-
-        successName.textContent = name;
-
-    }
+function openPopup(){
 
 
+    if(popup){
 
-    if(successOverlay){
-
-        successOverlay.classList.add(
-            "active"
-        );
+        popup.classList.add("active");
 
     }
 
@@ -251,14 +201,12 @@ function openSuccess(name){
 
 
 
-function closeSuccess(){
+function closePopupFunc(){
 
 
-    if(successOverlay){
+    if(popup){
 
-        successOverlay.classList.remove(
-            "active"
-        );
+        popup.classList.remove("active");
 
     }
 
@@ -267,38 +215,31 @@ function closeSuccess(){
 
 
 
-if(closeSuccessBtn){
+if(closePopup){
 
-
-    closeSuccessBtn.addEventListener(
+    closePopup.addEventListener(
         "click",
-        closeSuccess
+        closePopupFunc
     );
 
-
 }
 
 
 
+if(popup){
 
-if(successOverlay){
-
-
-    successOverlay.addEventListener(
+    popup.addEventListener(
         "click",
-        function(event){
+        function(e){
 
+            if(e.target === popup){
 
-            if(event.target === successOverlay){
-
-                closeSuccess();
+                closePopupFunc();
 
             }
 
-
         }
     );
-
 
 }
 
@@ -310,12 +251,13 @@ if(successOverlay){
 if(form){
 
 
+
 form.addEventListener(
 "submit",
-async function(event){
+async function(e){
 
 
-event.preventDefault();
+e.preventDefault();
 
 
 
@@ -323,7 +265,7 @@ const data = {
 
 
 name:
-document.getElementById("name").value.trim(),
+document.getElementById("name").value,
 
 
 guests:
@@ -335,7 +277,7 @@ document.getElementById("status").value,
 
 
 comment:
-document.getElementById("comment").value.trim()
+document.getElementById("comment").value
 
 
 };
@@ -343,8 +285,7 @@ document.getElementById("comment").value.trim()
 
 
 
-
-if(!data.name){
+if(!data.name.trim()){
 
 
 message.textContent =
@@ -359,20 +300,11 @@ return;
 
 
 
-
 button.disabled = true;
 
 
 button.textContent =
 "ОТПРАВКА...";
-
-
-
-message.textContent =
-"Отправляем...";
-
-
-
 
 
 
@@ -404,8 +336,6 @@ JSON.stringify(data)
 
 
 
-
-
 const result =
 await response.json();
 
@@ -417,19 +347,13 @@ if(result.ok){
 
 
 message.textContent =
-"Готово";
-
-
-openSuccess(data.name);
-
+"Отправлено ✓";
 
 
 form.reset();
 
 
-
-document.getElementById("guests").value =
-"1";
+openPopup();
 
 
 
@@ -439,7 +363,6 @@ else{
 
 
 message.textContent =
-result.error ||
 "Ошибка отправки";
 
 
@@ -448,13 +371,14 @@ result.error ||
 
 
 
-
 }
+
+
 
 catch(error){
 
 
-console.error(error);
+console.log(error);
 
 
 message.textContent =
@@ -477,7 +401,6 @@ button.textContent =
 
 
 }
-
 
 
 
