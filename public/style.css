@@ -1,74 +1,77 @@
 :root{
-    --black:#050505;
-    --dark:#090909;
-    --white:#ffffff;
-    --gray:#bdbdbd;
-    --line:rgba(255,255,255,.14);
-    --glass:rgba(255,255,255,.06);
+
+--black:#050505;
+--white:#fff;
+--gray:#aaa;
+--glass:rgba(255,255,255,.06);
+
 }
 
 
 *{
-    box-sizing:border-box;
+
+box-sizing:border-box;
+
 }
+
 
 
 html{
-    scroll-behavior:smooth;
+
+scroll-behavior:smooth;
+
 }
+
 
 
 body{
 
-    margin:0;
+margin:0;
 
-    background:#050505;
+background:#050505;
 
-    color:white;
+color:white;
 
-    font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+font-family:Arial, Helvetica, sans-serif;
 
-    overflow-x:hidden;
+overflow-x:hidden;
 
 }
 
 
-/* плёночный шум */
+
 
 body::before{
 
-    content:"";
+content:"";
 
-    position:fixed;
+position:fixed;
 
-    inset:0;
+inset:0;
 
-    pointer-events:none;
+pointer-events:none;
 
-    opacity:.06;
+z-index:999;
 
-    z-index:999;
+opacity:.06;
 
-    background-image:
-    radial-gradient(circle, white 1px, transparent 1px);
+background-image:
 
-    background-size:
-    5px 5px;
+radial-gradient(circle,#fff 1px,transparent 1px);
+
+background-size:5px 5px;
 
 }
+
+
 
 
 
 main{
 
-    width:100%;
+max-width:1100px;
 
-    max-width:1100px;
-
-    margin:auto;
+margin:auto;
 
 }
 
@@ -77,148 +80,137 @@ main{
 
 section{
 
-    min-height:100vh;
+min-height:100vh;
 
-    padding:
-    8vw;
+padding:8vw;
 
-    display:flex;
+display:flex;
 
-    flex-direction:column;
+justify-content:center;
 
-    justify-content:center;
+flex-direction:column;
 
-    position:relative;
+position:relative;
 
-    overflow:hidden;
+overflow:hidden;
 
-    border-bottom:
-    1px solid var(--line);
+border-bottom:1px solid rgba(255,255,255,.12);
 
 }
 
 
 
-
-
-/* =====================
-   ТЕКСТ
-===================== */
 
 
 .label{
 
-    font-size:12px;
+font-size:12px;
 
-    letter-spacing:7px;
+letter-spacing:6px;
 
-    color:#d0d0d0;
+font-weight:800;
 
-    font-weight:800;
+color:#ccc;
 
-    margin-bottom:25px;
+margin-bottom:25px;
+
+text-transform:uppercase;
 
 }
+
 
 
 
 h1{
 
-    margin:0;
+margin:0;
 
-    font-size:
-    clamp(55px,10vw,120px);
+font-size:clamp(60px,10vw,120px);
 
-    line-height:.85;
+line-height:.85;
 
-    letter-spacing:-5px;
+font-weight:900;
 
-    font-weight:900;
+letter-spacing:-5px;
 
-    text-transform:uppercase;
+text-transform:uppercase;
 
 }
+
 
 
 
 h1 span{
 
-    color:transparent;
+color:transparent;
 
-    -webkit-text-stroke:
-
-    2px white;
+-webkit-text-stroke:2px white;
 
 }
+
 
 
 
 h2{
 
-    margin:0 0 30px;
+margin:0 0 35px;
 
-    font-size:
-    clamp(42px,8vw,85px);
+font-size:clamp(45px,8vw,90px);
 
-    line-height:.9;
+line-height:.9;
 
-    letter-spacing:-3px;
+font-weight:900;
 
-    font-weight:900;
+letter-spacing:-4px;
 
-    text-transform:uppercase;
+text-transform:uppercase;
 
 }
 
 
 
 
-/* =====================
-   HERO
-===================== */
+
+/* ======================
+ HERO
+====================== */
+
 
 
 .hero{
 
-    isolation:isolate;
+isolation:isolate;
 
 }
-
 
 
 
 .hero-bg{
 
-    position:absolute;
+position:absolute;
 
-    inset:0;
+inset:0;
 
+background:
 
-    background:
+url("graffiti-bw.jpg")
 
-    url("graffiti-bw.jpg")
-
-    center/cover no-repeat;
-
-
-    filter:
-
-    grayscale(100%)
-
-    brightness(38%)
-
-    contrast(120%);
+center/cover no-repeat;
 
 
-    transform:scale(1.05);
+filter:
+
+grayscale(100%)
+
+brightness(.35)
+
+contrast(1.2);
 
 
-    z-index:-4;
+z-index:-5;
 
 
-    animation:
-
-    bgMove 18s infinite alternate ease-in-out;
+animation:bgMove 18s infinite alternate;
 
 }
 
@@ -226,24 +218,17 @@ h2{
 
 @keyframes bgMove{
 
-
 from{
 
-    transform:
-    scale(1.05)
-    translateX(0);
+transform:scale(1.05);
 
 }
-
 
 to{
 
-    transform:
-    scale(1.12)
-    translateX(-25px);
+transform:scale(1.15) translateX(-25px);
 
 }
-
 
 }
 
@@ -252,47 +237,43 @@ to{
 
 .hero-overlay{
 
-    position:absolute;
+position:absolute;
 
-    inset:0;
+inset:0;
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(0,0,0,.25),
+
+rgba(0,0,0,.9)
+
+);
 
 
-    background:
-
-    linear-gradient(
-
-    180deg,
-
-    rgba(0,0,0,.25),
-
-    rgba(0,0,0,.85)
-
-    );
-
-
-    z-index:-3;
+z-index:-4;
 
 }
 
 
 
 
-/* =====================
-   ДЫМ
-===================== */
+
+/* ДЫМ */
 
 
 .hero-smoke{
 
-    position:absolute;
+position:absolute;
 
-    border-radius:50%;
+border-radius:50%;
 
-    filter:blur(80px);
+filter:blur(90px);
 
-    pointer-events:none;
-
-    z-index:-2;
+z-index:-2;
 
 }
 
@@ -300,237 +281,187 @@ to{
 
 .hero-smoke-1{
 
+width:400px;
 
-    width:350px;
+height:400px;
 
-    height:350px;
+top:-100px;
 
-
-    top:-50px;
-
-    left:-80px;
+left:-100px;
 
 
-    background:
+background:
 
-    radial-gradient(
+radial-gradient(
 
-    circle,
+circle,
 
-    rgba(255,255,255,.35),
+rgba(255,255,255,.35),
 
-    transparent 70%
+transparent 70%
 
-    );
+);
 
 
-    animation:
+animation:
 
-    smokeOne 12s infinite alternate;
+smoke1 14s infinite alternate;
 
 }
+
 
 
 
 .hero-smoke-2{
 
+width:450px;
 
-    width:450px;
+height:450px;
 
-    height:450px;
+right:-150px;
 
-
-    right:-120px;
-
-    bottom:-80px;
+bottom:-100px;
 
 
-    background:
+background:
 
-    radial-gradient(
+radial-gradient(
 
-    circle,
+circle,
 
-    rgba(255,255,255,.28),
+rgba(255,255,255,.25),
 
-    transparent 70%
+transparent 70%
 
-    );
+);
 
 
-    animation:
+animation:
 
-    smokeTwo 16s infinite alternate;
+smoke2 18s infinite alternate;
 
 }
 
 
 
 
+@keyframes smoke1{
 
-@keyframes smokeOne{
+from{
 
-
-0%{
-
-transform:
-translate(0,0)
-scale(1);
-
-opacity:.35;
+transform:translate(0,0);
 
 }
 
+to{
 
-100%{
-
-transform:
-translate(80px,40px)
-scale(1.3);
-
-opacity:.15;
+transform:translate(80px,50px);
 
 }
-
 
 }
 
 
 
+@keyframes smoke2{
 
-@keyframes smokeTwo{
+from{
 
-
-0%{
-
-transform:
-translate(0,0)
-scale(1);
-
-opacity:.2;
+transform:translate(0,0);
 
 }
 
+to{
 
-100%{
-
-transform:
-translate(-80px,-50px)
-scale(1.25);
-
-opacity:.4;
+transform:translate(-80px,-50px);
 
 }
 
-
 }
+
 
 
 
 
 .hero-content{
 
+animation:
 
-    position:relative;
-
-    z-index:5;
-
-    animation:
-
-    showHero 1.2s ease;
-
+heroShow 1.2s ease;
 
 }
 
 
 
-
-@keyframes showHero{
-
+@keyframes heroShow{
 
 from{
 
 opacity:0;
 
-transform:
-translateY(40px);
+transform:translateY(40px);
 
-filter:blur(8px);
+filter:blur(10px);
 
 }
-
 
 to{
 
 opacity:1;
 
-transform:
-translateY(0);
+transform:translateY(0);
 
 filter:blur(0);
 
 }
 
-
 }
+
+
 
 
 
 .hero-subtitle{
 
+margin-top:25px;
 
-    margin-top:25px;
+font-size:15px;
 
+letter-spacing:6px;
 
-    letter-spacing:6px;
+font-weight:800;
 
-
-    font-size:15px;
-
-
-    color:#ddd;
-
-
-    font-weight:800;
-
+color:#ddd;
 
 }
+
 
 
 
 .invite-text{
 
+margin-top:35px;
 
-    margin-top:35px;
+font-size:20px;
 
+line-height:1.7;
 
-    font-size:21px;
-
-
-    line-height:1.6;
-
-
-    color:#ddd;
-
+color:#ddd;
 
 }
 
 
 
+
 .hero-info{
 
+display:flex;
 
-    display:flex;
+gap:15px;
 
+flex-wrap:wrap;
 
-    gap:15px;
-
-
-    flex-wrap:wrap;
-
-
-    margin-top:35px;
-
+margin-top:35px;
 
 }
 
@@ -538,56 +469,40 @@ filter:blur(0);
 
 .hero-pill{
 
+padding:15px 25px;
 
-    padding:
+border-radius:50px;
 
-    15px 25px;
+background:rgba(255,255,255,.08);
 
+border:1px solid rgba(255,255,255,.2);
 
-    background:
+backdrop-filter:blur(15px);
 
-    rgba(255,255,255,.08);
+font-weight:800;
 
-
-    border:
-
-    1px solid rgba(255,255,255,.2);
-
-
-    border-radius:50px;
+}
 
 
-    backdrop-filter:blur(12px);
 
-
-    font-weight:800;
-
-
-}/* =====================
-   HERO ДОПОЛНЕНИЯ
-===================== */
 
 .hero-corner{
 
-    position:absolute;
+position:absolute;
 
-    top:30px;
+right:30px;
 
-    right:30px;
+top:30px;
 
-    display:flex;
+display:flex;
 
-    flex-direction:column;
+flex-direction:column;
 
-    align-items:flex-end;
+align-items:end;
 
-    gap:5px;
+font-size:12px;
 
-    font-size:12px;
-
-    letter-spacing:4px;
-
-    color:#ddd;
+letter-spacing:4px;
 
 }
 
@@ -595,46 +510,33 @@ filter:blur(0);
 
 .hero-side-label{
 
-    position:absolute;
+position:absolute;
 
-    left:-40px;
+left:-50px;
 
-    top:50%;
+top:50%;
 
-    transform:rotate(-90deg);
+transform:rotate(-90deg);
 
-    font-size:11px;
+font-size:11px;
 
-    letter-spacing:6px;
+letter-spacing:5px;
 
-    color:rgba(255,255,255,.45);
-
-}
-
-
-
-
-
-/* =====================
-   ТАЙМЕР
-===================== */
-
-
-.countdown-section{
-
-    background:#070707;
+color:#888;
 
 }
-
+/* ======================
+   TIMER
+====================== */
 
 
 .timer{
 
-    display:grid;
+display:grid;
 
-    grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(4,1fr);
 
-    gap:18px;
+gap:15px;
 
 }
 
@@ -642,25 +544,17 @@ filter:blur(0);
 
 .timer-box{
 
-    padding:30px 15px;
+padding:30px 15px;
 
-    background:
+background:rgba(255,255,255,.05);
 
-    rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.15);
 
+border-radius:25px;
 
-    border:
+text-align:center;
 
-    1px solid rgba(255,255,255,.15);
-
-
-    border-radius:25px;
-
-
-    backdrop-filter:blur(15px);
-
-
-    text-align:center;
+backdrop-filter:blur(15px);
 
 }
 
@@ -668,11 +562,11 @@ filter:blur(0);
 
 .timer-box b{
 
-    display:block;
+display:block;
 
-    font-size:55px;
+font-size:55px;
 
-    font-weight:900;
+font-weight:900;
 
 }
 
@@ -680,11 +574,11 @@ filter:blur(0);
 
 .timer-box span{
 
-    color:#aaa;
+font-size:11px;
 
-    font-size:12px;
+letter-spacing:4px;
 
-    letter-spacing:4px;
+color:#aaa;
 
 }
 
@@ -694,88 +588,66 @@ filter:blur(0);
 
 .section-note{
 
-    margin-top:25px;
+color:#aaa;
 
-    color:#aaa;
+font-size:18px;
 
-    font-size:18px;
+line-height:1.6;
 
-}
-
-
-
-
-
-
-
-/* =====================
-   МЕСТО
-===================== */
-
-
-.details{
-
-    background:#060606;
+margin-top:25px;
 
 }
 
+
+
+
+
+/* ======================
+   LOCATION
+====================== */
 
 
 .place-card{
 
 
-    max-width:720px;
+padding:35px;
 
 
-    padding:35px;
+background:rgba(255,255,255,.05);
 
 
-    background:
-
-    rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.15);
 
 
-    border:
-
-    1px solid rgba(255,255,255,.15);
+border-radius:30px;
 
 
-    border-radius:30px;
+backdrop-filter:blur(15px);
 
-
-    backdrop-filter:blur(15px);
-
-
-    box-shadow:
-
-    0 30px 80px rgba(0,0,0,.5);
 
 }
-
 
 
 
 .place-badge{
 
 
-    display:inline-block;
+display:inline-block;
 
 
-    padding:10px 18px;
+padding:10px 20px;
 
 
-    border-radius:50px;
+border-radius:50px;
 
 
-    border:
-
-    1px solid rgba(255,255,255,.2);
+border:1px solid rgba(255,255,255,.2);
 
 
-    font-size:12px;
+font-size:12px;
 
 
-    letter-spacing:3px;
+letter-spacing:4px;
 
 
 }
@@ -785,16 +657,13 @@ filter:blur(0);
 .place-name{
 
 
-    font-size:42px;
+font-size:42px;
 
 
-    font-weight:900;
+font-weight:900;
 
 
-    margin:25px 0;
-
-
-    text-transform:uppercase;
+margin:25px 0;
 
 
 }
@@ -804,16 +673,16 @@ filter:blur(0);
 .place-divider{
 
 
-    height:1px;
+width:200px;
 
 
-    width:200px;
+height:1px;
 
 
-    background:white;
+background:white;
 
 
-    opacity:.5;
+opacity:.5;
 
 
 }
@@ -823,16 +692,13 @@ filter:blur(0);
 .place-address{
 
 
-    margin-top:25px;
+font-size:18px;
 
 
-    color:#ddd;
+line-height:1.7;
 
 
-    font-size:18px;
-
-
-    line-height:1.7;
+color:#ddd;
 
 
 }
@@ -842,44 +708,45 @@ filter:blur(0);
 .place-note{
 
 
-    margin-top:25px;
+margin-top:25px;
 
 
-    color:#aaa;
+color:#aaa;
 
 
-    line-height:1.6;
+line-height:1.6;
 
 
 }
+
 
 
 
 .map-button{
 
 
-    display:inline-flex;
+display:inline-flex;
 
 
-    margin-top:25px;
+margin-top:25px;
 
 
-    padding:16px 35px;
+padding:17px 35px;
 
 
-    border-radius:50px;
+background:white;
 
 
-    background:white;
+color:black;
 
 
-    color:black;
+border-radius:50px;
 
 
-    text-decoration:none;
+text-decoration:none;
 
 
-    font-weight:900;
+font-weight:900;
 
 
 }
@@ -888,62 +755,27 @@ filter:blur(0);
 
 
 
-
-
-/* =====================
-   ДРЕСС КОД
-===================== */
-
-
-.dress-section{
-
-    background:#080808;
-
-}
-
+/* ======================
+   DRESS CODE
+====================== */
 
 
 .dress-code{
 
 
-    max-width:750px;
+padding:40px;
 
 
-    padding:40px;
+background:rgba(255,255,255,.04);
 
 
-    background:
-
-    rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.15);
 
 
-    border:
-
-    1px solid rgba(255,255,255,.15);
+border-radius:30px;
 
 
-    border-radius:30px;
-
-
-    backdrop-filter:blur(15px);
-
-
-}
-
-
-
-.dress-code h2{
-
-
-    font-family:
-
-    Georgia,serif;
-
-
-    font-weight:400;
-
-
-    text-transform:none;
+backdrop-filter:blur(15px);
 
 
 }
@@ -953,31 +785,13 @@ filter:blur(0);
 .dress-code p{
 
 
-    font-family:
-
-    Georgia,serif;
+font-size:22px;
 
 
-    font-size:22px;
+line-height:1.7;
 
 
-    line-height:1.7;
-
-
-    color:#ddd;
-
-
-}
-
-
-
-.dress-code b{
-
-
-    color:white;
-
-
-    letter-spacing:4px;
+color:#ddd;
 
 
 }
@@ -987,13 +801,13 @@ filter:blur(0);
 .colors{
 
 
-    display:flex;
+display:flex;
 
 
-    gap:25px;
+gap:25px;
 
 
-    margin-top:35px;
+margin-top:35px;
 
 
 }
@@ -1003,13 +817,13 @@ filter:blur(0);
 .color{
 
 
-    width:70px;
+width:70px;
 
 
-    height:70px;
+height:70px;
 
 
-    border-radius:50%;
+border-radius:50%;
 
 
 }
@@ -1019,7 +833,7 @@ filter:blur(0);
 .color.white{
 
 
-    background:white;
+background:white;
 
 
 }
@@ -1029,12 +843,229 @@ filter:blur(0);
 .color.black{
 
 
-    background:#111;
+background:#111;
 
 
-    border:
+border:1px solid #444;
 
-    1px solid #444;
+
+}
+
+
+
+
+
+/* ======================
+   TICKET
+====================== */
+
+
+.ticket-section{
+
+
+background:#070707;
+
+
+}
+
+
+
+.ticket-card{
+
+
+max-width:650px;
+
+
+padding:45px;
+
+
+background:
+
+
+linear-gradient(
+
+145deg,
+
+rgba(255,255,255,.08),
+
+rgba(255,255,255,.02)
+
+);
+
+
+border:
+
+1px solid rgba(255,255,255,.2);
+
+
+
+border-radius:35px;
+
+
+
+position:relative;
+
+
+
+overflow:hidden;
+
+
+
+}
+
+
+
+.ticket-card::before{
+
+
+content:"";
+
+
+position:absolute;
+
+
+inset:0;
+
+
+background:
+
+radial-gradient(
+
+circle at top right,
+
+rgba(255,255,255,.12),
+
+transparent 35%
+
+);
+
+
+pointer-events:none;
+
+
+}
+
+
+
+.ticket-top{
+
+
+font-size:12px;
+
+
+letter-spacing:6px;
+
+
+color:#aaa;
+
+
+}
+
+
+
+.ticket-card h2{
+
+
+margin-top:30px;
+
+
+}
+
+
+
+.ticket-line{
+
+
+height:1px;
+
+
+background:rgba(255,255,255,.25);
+
+
+margin:30px 0;
+
+
+}
+
+
+
+.ticket-info{
+
+
+display:flex;
+
+
+flex-direction:column;
+
+
+gap:20px;
+
+
+}
+
+
+
+.ticket-info div{
+
+
+display:flex;
+
+
+justify-content:space-between;
+
+
+gap:20px;
+
+
+}
+
+
+
+.ticket-info span{
+
+
+color:#888;
+
+
+letter-spacing:3px;
+
+
+font-size:12px;
+
+
+}
+
+
+
+.ticket-info b{
+
+
+text-align:right;
+
+
+}
+
+
+
+.ticket-status{
+
+
+margin-top:35px;
+
+
+padding-top:25px;
+
+
+border-top:1px dashed rgba(255,255,255,.25);
+
+
+color:#aaa;
+
+
+letter-spacing:5px;
+
+
+font-size:12px;
 
 
 }
@@ -1043,27 +1074,15 @@ filter:blur(0);
 
 
 
-
-
-/* =====================
-   ФОРМА
-===================== */
-
-
-.rsvp-section{
-
-
-    background:#050505;
-
-
-}
-
+/* ======================
+   FORM
+====================== */
 
 
 .rsvp-form{
 
 
-    max-width:700px;
+max-width:700px;
 
 
 }
@@ -1076,32 +1095,28 @@ textarea,
 button{
 
 
-    width:100%;
+width:100%;
 
 
-    padding:18px;
+padding:18px;
 
 
-    margin:10px 0;
+margin:10px 0;
 
 
-    border-radius:18px;
+background:rgba(255,255,255,.05);
 
 
-    background:
-
-    rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.2);
 
 
-    border:
-
-    1px solid rgba(255,255,255,.2);
+border-radius:18px;
 
 
-    color:white;
+color:white;
 
 
-    font-size:16px;
+font-size:16px;
 
 
 }
@@ -1111,7 +1126,7 @@ button{
 textarea{
 
 
-    min-height:140px;
+min-height:130px;
 
 
 }
@@ -1121,16 +1136,16 @@ textarea{
 button{
 
 
-    background:white;
+background:white;
 
 
-    color:black;
+color:black;
 
 
-    font-weight:900;
+font-weight:900;
 
 
-    cursor:pointer;
+cursor:pointer;
 
 
 }
@@ -1139,48 +1154,45 @@ button{
 
 
 
-
-/* =====================
-   ОКНО "ТЫ В СПИСКЕ"
-===================== */
+/* ======================
+   SUCCESS
+====================== */
 
 
 .success-overlay{
 
 
-    position:fixed;
+position:fixed;
 
 
-    inset:0;
+inset:0;
 
 
-    display:flex;
+display:flex;
 
 
-    justify-content:center;
+align-items:center;
 
 
-    align-items:center;
+justify-content:center;
 
 
-    background:
-
-    rgba(0,0,0,.75);
+background:rgba(0,0,0,.8);
 
 
-    backdrop-filter:blur(12px);
+backdrop-filter:blur(15px);
 
 
-    z-index:1000;
+z-index:2000;
 
 
-    opacity:0;
+opacity:0;
 
 
-    visibility:hidden;
+visibility:hidden;
 
 
-    transition:.3s;
+transition:.3s;
 
 
 }
@@ -1190,10 +1202,10 @@ button{
 .success-overlay.active{
 
 
-    opacity:1;
+opacity:1;
 
 
-    visibility:visible;
+visibility:visible;
 
 
 }
@@ -1203,62 +1215,22 @@ button{
 .success-card{
 
 
-    width:min(90%,500px);
+width:min(90%,500px);
 
 
-    padding:40px;
+padding:40px;
 
 
-    text-align:center;
+text-align:center;
 
 
-    background:
-
-    rgba(255,255,255,.06);
+background:rgba(255,255,255,.06);
 
 
-    border:
-
-    1px solid rgba(255,255,255,.2);
+border:1px solid rgba(255,255,255,.2);
 
 
-    border-radius:30px;
-
-
-    animation:
-
-    popup .5s ease;
-
-
-}
-
-
-
-@keyframes popup{
-
-
-from{
-
-
-    transform:translateY(40px) scale(.9);
-
-
-    opacity:0;
-
-
-}
-
-
-to{
-
-
-    transform:translateY(0) scale(1);
-
-
-    opacity:1;
-
-
-}
+border-radius:30px;
 
 
 }
@@ -1268,70 +1240,37 @@ to{
 .success-mark{
 
 
-    width:90px;
+width:90px;
 
 
-    height:90px;
+height:90px;
 
 
-    margin:auto;
+margin:auto;
 
 
-    display:flex;
+display:flex;
 
 
-    align-items:center;
+align-items:center;
 
 
-    justify-content:center;
+justify-content:center;
 
 
-    border-radius:50%;
+border-radius:50%;
 
 
-    background:white;
+background:white;
 
 
-    color:black;
+color:black;
 
 
-    font-size:50px;
+font-size:50px;
 
 
-    font-weight:900;
-
-
-    animation:
-
-    check .6s ease;
-
-
-}
-
-
-
-@keyframes check{
-
-
-0%{
-
-transform:scale(0);
-
-}
-
-
-70%{
-
-transform:scale(1.15);
-
-}
-
-
-100%{
-
-transform:scale(1);
-
-}
+font-weight:900;
 
 
 }
@@ -1341,10 +1280,7 @@ transform:scale(1);
 .success-card h3{
 
 
-    font-size:40px;
-
-
-    margin:25px 0;
+font-size:40px;
 
 
 }
@@ -1354,26 +1290,13 @@ transform:scale(1);
 .success-text{
 
 
-    color:#ddd;
+font-size:20px;
 
 
-    font-size:20px;
+line-height:1.7;
 
 
-    line-height:1.6;
-
-
-}
-
-
-
-.success-text strong{
-
-
-    color:white;
-
-
-    letter-spacing:3px;
+color:#ddd;
 
 
 }
@@ -1383,24 +1306,19 @@ transform:scale(1);
 .success-event{
 
 
-    margin-top:25px;
+margin-top:25px;
 
 
-    padding-top:20px;
+padding-top:20px;
 
 
-    border-top:
-
-    1px solid rgba(255,255,255,.15);
+border-top:1px solid rgba(255,255,255,.2);
 
 
-    color:#aaa;
+letter-spacing:4px;
 
 
-    letter-spacing:4px;
-
-
-    font-size:12px;
+color:#aaa;
 
 
 }
@@ -1410,19 +1328,10 @@ transform:scale(1);
 .success-btn{
 
 
-    margin-top:30px;
+margin-top:30px;
 
 
-    border:none;
-
-
-    background:white;
-
-
-    color:black;
-
-
-    border-radius:50px;
+border:none;
 
 
 }
@@ -1431,19 +1340,18 @@ transform:scale(1);
 
 
 
-/* =====================
-   МОБИЛЬНАЯ ВЕРСИЯ
-===================== */
+/* ======================
+   MOBILE
+====================== */
 
 
 @media(max-width:700px){
 
 
+
 section{
 
-    padding:
-
-    15vw 7vw;
+padding:18vw 7vw;
 
 }
 
@@ -1451,7 +1359,7 @@ section{
 
 h1{
 
-    font-size:55px;
+font-size:55px;
 
 }
 
@@ -1459,25 +1367,7 @@ h1{
 
 h2{
 
-    font-size:45px;
-
-}
-
-
-
-.hero-side-label{
-
-    display:none;
-
-}
-
-
-
-.hero-corner{
-
-    top:20px;
-
-    right:20px;
+font-size:45px;
 
 }
 
@@ -1485,7 +1375,7 @@ h2{
 
 .timer{
 
-    grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(2,1fr);
 
 }
 
@@ -1493,17 +1383,7 @@ h2{
 
 .timer-box b{
 
-    font-size:38px;
-
-}
-
-
-
-.place-card{
-
-
-    padding:25px;
-
+font-size:38px;
 
 }
 
@@ -1511,341 +1391,42 @@ h2{
 
 .place-name{
 
-
-    font-size:32px;
-
+font-size:32px;
 
 }
 
 
 
-.place-address{
+.ticket-card{
 
-
-    font-size:16px;
-
+padding:30px 20px;
 
 }
 
 
 
-.dress-code{
+.ticket-info div{
 
-
-    padding:25px;
-
+flex-direction:column;
 
 }
 
 
 
-.dress-code p{
+.ticket-info b{
 
-
-    font-size:19px;
-
+text-align:left;
 
 }
 
 
 
-.success-card{
+.hero-side-label{
 
-
-    padding:30px 20px;
-
+display:none;
 
 }
 
-
-
-.success-card h3{
-
-
-    font-size:32px;
-
-
-}
-
-
-}
-/* =========================
-   SCROLL ANIMATION
-========================= */
-
-
-section > *{
-
-    animation:
-    fadeUp .8s ease both;
-
-}
-
-
-
-section > *:nth-child(2){
-
-    animation-delay:.15s;
-
-}
-
-
-
-section > *:nth-child(3){
-
-    animation-delay:.25s;
-
-}
-
-
-
-section > *:nth-child(4){
-
-    animation-delay:.35s;
-
-}
-
-
-
-@keyframes fadeUp{
-
-
-from{
-
-    opacity:0;
-
-    transform:
-    translateY(35px);
-
-    filter:blur(8px);
-
-}
-
-
-to{
-
-    opacity:1;
-
-    transform:
-    translateY(0);
-
-    filter:blur(0);
-
-}
-
-
-}
-
-
-
-
-
-/* =========================
-   КРАСИВЫЕ РАЗДЕЛИТЕЛИ
-========================= */
-
-
-section::after{
-
-    content:"";
-
-
-    position:absolute;
-
-
-    bottom:0;
-
-
-    left:8%;
-
-
-    width:84%;
-
-
-    height:1px;
-
-
-    background:
-
-    linear-gradient(
-
-    90deg,
-
-    transparent,
-
-    rgba(255,255,255,.25),
-
-    transparent
-
-    );
-
-
-}
-
-
-
-
-/* =========================
-   СТЕКЛО С ЖИВЫМ ЭФФЕКТОМ
-========================= */
-
-
-.place-card,
-.dress-code,
-.timer-box,
-.success-card{
-
-
-    transition:
-
-    transform .35s ease,
-
-    border-color .35s ease;
-
-
-}
-
-
-
-.place-card:hover,
-.dress-code:hover,
-.timer-box:hover{
-
-
-    transform:
-    translateY(-8px);
-
-
-    border-color:
-
-    rgba(255,255,255,.35);
-
-
-}
-
-
-
-
-
-
-/* =========================
-   МЯГКОЕ СВЕЧЕНИЕ
-========================= */
-
-
-.hero::before{
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    width:400px;
-
-
-    height:400px;
-
-
-    top:20%;
-
-
-    left:50%;
-
-
-    transform:translateX(-50%);
-
-
-    background:
-
-    radial-gradient(
-
-    circle,
-
-    rgba(255,255,255,.08),
-
-    transparent 70%
-
-    );
-
-
-    pointer-events:none;
-
-
-}
-
-
-
-
-
-/* =========================
-   КНОПКИ
-========================= */
-
-
-.map-button,
-button{
-
-
-    position:relative;
-
-    overflow:hidden;
-
-
-}
-
-
-
-.map-button::before,
-button::before{
-
-
-    content:"";
-
-
-    position:absolute;
-
-
-    top:0;
-
-
-    left:-100%;
-
-
-    width:100%;
-
-
-    height:100%;
-
-
-    background:
-
-    linear-gradient(
-
-    120deg,
-
-    transparent,
-
-    rgba(255,255,255,.5),
-
-    transparent
-
-    );
-
-
-    transition:.5s;
-
-
-}
-
-
-
-.map-button:hover::before,
-button:hover::before{
-
-
-    left:100%;
 
 
 }
