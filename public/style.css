@@ -1,9 +1,8 @@
 :root{
 
 --black:#050505;
---white:#fff;
---gray:#aaa;
---glass:rgba(255,255,255,.06);
+--white:#ffffff;
+--gray:#999;
 
 }
 
@@ -40,30 +39,13 @@ overflow-x:hidden;
 
 
 
+/* убираем сетку */
 
 body::before{
 
-content:"";
-
-position:fixed;
-
-inset:0;
-
-pointer-events:none;
-
-z-index:999;
-
-opacity:.06;
-
-background-image:
-
-radial-gradient(circle,#fff 1px,transparent 1px);
-
-background-size:5px 5px;
+content:none;
 
 }
-
-
 
 
 
@@ -94,8 +76,6 @@ position:relative;
 
 overflow:hidden;
 
-border-bottom:1px solid rgba(255,255,255,.12);
-
 }
 
 
@@ -106,17 +86,16 @@ border-bottom:1px solid rgba(255,255,255,.12);
 
 font-size:12px;
 
-letter-spacing:6px;
+letter-spacing:7px;
 
 font-weight:800;
 
-color:#ccc;
+color:#aaa;
 
 margin-bottom:25px;
 
-text-transform:uppercase;
-
 }
+
 
 
 
@@ -129,14 +108,13 @@ font-size:clamp(60px,10vw,120px);
 
 line-height:.85;
 
-font-weight:900;
-
 letter-spacing:-5px;
+
+font-weight:900;
 
 text-transform:uppercase;
 
 }
-
 
 
 
@@ -151,17 +129,18 @@ color:transparent;
 
 
 
+
 h2{
 
 margin:0 0 35px;
 
-font-size:clamp(45px,8vw,90px);
+font-size:clamp(45px,8vw,85px);
 
 line-height:.9;
 
-font-weight:900;
-
 letter-spacing:-4px;
+
+font-weight:900;
 
 text-transform:uppercase;
 
@@ -171,10 +150,9 @@ text-transform:uppercase;
 
 
 
-/* ======================
+/* ===================
  HERO
-====================== */
-
+=================== */
 
 
 .hero{
@@ -210,13 +188,17 @@ contrast(1.2);
 z-index:-5;
 
 
-animation:bgMove 18s infinite alternate;
+animation:
+
+bgMove 20s infinite alternate ease-in-out;
 
 }
 
 
 
+
 @keyframes bgMove{
+
 
 from{
 
@@ -224,11 +206,13 @@ transform:scale(1.05);
 
 }
 
+
 to{
 
-transform:scale(1.15) translateX(-25px);
+transform:scale(1.12) translateX(-20px);
 
 }
+
 
 }
 
@@ -240,6 +224,7 @@ transform:scale(1.15) translateX(-25px);
 position:absolute;
 
 inset:0;
+
 
 background:
 
@@ -262,6 +247,7 @@ z-index:-4;
 
 
 
+
 /* ДЫМ */
 
 
@@ -275,7 +261,10 @@ filter:blur(90px);
 
 z-index:-2;
 
+pointer-events:none;
+
 }
+
 
 
 
@@ -285,9 +274,9 @@ width:400px;
 
 height:400px;
 
-top:-100px;
-
 left:-100px;
+
+top:-100px;
 
 
 background:
@@ -305,7 +294,7 @@ transparent 70%
 
 animation:
 
-smoke1 14s infinite alternate;
+smokeOne 14s infinite alternate;
 
 }
 
@@ -338,18 +327,19 @@ transparent 70%
 
 animation:
 
-smoke2 18s infinite alternate;
+smokeTwo 18s infinite alternate;
 
 }
 
 
 
-
-@keyframes smoke1{
+@keyframes smokeOne{
 
 from{
 
 transform:translate(0,0);
+
+opacity:.25;
 
 }
 
@@ -357,17 +347,21 @@ to{
 
 transform:translate(80px,50px);
 
-}
+opacity:.45;
 
 }
 
+}
 
 
-@keyframes smoke2{
+
+@keyframes smokeTwo{
 
 from{
 
 transform:translate(0,0);
+
+opacity:.2;
 
 }
 
@@ -375,15 +369,21 @@ to{
 
 transform:translate(-80px,-50px);
 
-}
+opacity:.4;
 
 }
 
-
-
+}
+/* ===================
+ HERO CONTENT
+=================== */
 
 
 .hero-content{
+
+position:relative;
+
+z-index:5;
 
 animation:
 
@@ -393,7 +393,9 @@ heroShow 1.2s ease;
 
 
 
+
 @keyframes heroShow{
+
 
 from{
 
@@ -401,9 +403,10 @@ opacity:0;
 
 transform:translateY(40px);
 
-filter:blur(10px);
+filter:blur(8px);
 
 }
+
 
 to{
 
@@ -415,6 +418,7 @@ filter:blur(0);
 
 }
 
+
 }
 
 
@@ -423,15 +427,21 @@ filter:blur(0);
 
 .hero-subtitle{
 
+
 margin-top:25px;
+
 
 font-size:15px;
 
-letter-spacing:6px;
+
+letter-spacing:7px;
+
 
 font-weight:800;
 
+
 color:#ddd;
+
 
 }
 
@@ -440,13 +450,18 @@ color:#ddd;
 
 .invite-text{
 
+
 margin-top:35px;
+
 
 font-size:20px;
 
+
 line-height:1.7;
 
+
 color:#ddd;
+
 
 }
 
@@ -455,13 +470,18 @@ color:#ddd;
 
 .hero-info{
 
+
 display:flex;
+
 
 gap:15px;
 
+
 flex-wrap:wrap;
 
+
 margin-top:35px;
+
 
 }
 
@@ -469,17 +489,24 @@ margin-top:35px;
 
 .hero-pill{
 
+
 padding:15px 25px;
+
 
 border-radius:50px;
 
-background:rgba(255,255,255,.08);
+
+background:rgba(255,255,255,.07);
+
 
 border:1px solid rgba(255,255,255,.2);
 
+
 backdrop-filter:blur(15px);
 
+
 font-weight:800;
+
 
 }
 
@@ -488,55 +515,89 @@ font-weight:800;
 
 .hero-corner{
 
+
 position:absolute;
 
-right:30px;
 
 top:30px;
 
+
+right:30px;
+
+
 display:flex;
+
 
 flex-direction:column;
 
-align-items:end;
+
+align-items:flex-end;
+
+
+gap:5px;
+
 
 font-size:12px;
 
-letter-spacing:4px;
+
+letter-spacing:5px;
+
+
+color:#ddd;
+
 
 }
+
 
 
 
 .hero-side-label{
 
+
 position:absolute;
 
-left:-50px;
+
+left:-45px;
+
 
 top:50%;
 
+
 transform:rotate(-90deg);
+
 
 font-size:11px;
 
-letter-spacing:5px;
 
-color:#888;
+letter-spacing:6px;
+
+
+color:#777;
+
 
 }
-/* ======================
-   TIMER
-====================== */
+
+
+
+
+
+/* ===================
+ TIMER
+=================== */
+
 
 
 .timer{
 
+
 display:grid;
+
 
 grid-template-columns:repeat(4,1fr);
 
+
 gap:15px;
+
 
 }
 
@@ -544,17 +605,24 @@ gap:15px;
 
 .timer-box{
 
+
 padding:30px 15px;
 
-background:rgba(255,255,255,.05);
 
-border:1px solid rgba(255,255,255,.15);
+background:rgba(255,255,255,.04);
+
+
+border:1px solid rgba(255,255,255,.14);
+
 
 border-radius:25px;
 
-text-align:center;
 
 backdrop-filter:blur(15px);
+
+
+text-align:center;
+
 
 }
 
@@ -562,11 +630,15 @@ backdrop-filter:blur(15px);
 
 .timer-box b{
 
+
 display:block;
+
 
 font-size:55px;
 
+
 font-weight:900;
+
 
 }
 
@@ -574,27 +646,32 @@ font-weight:900;
 
 .timer-box span{
 
+
 font-size:11px;
+
 
 letter-spacing:4px;
 
-color:#aaa;
+
+color:#888;
+
 
 }
-
 
 
 
 
 .section-note{
 
-color:#aaa;
+
+margin-top:25px;
+
 
 font-size:18px;
 
-line-height:1.6;
 
-margin-top:25px;
+color:#aaa;
+
 
 }
 
@@ -602,9 +679,11 @@ margin-top:25px;
 
 
 
-/* ======================
-   LOCATION
-====================== */
+
+
+/* ===================
+ LOCATION
+=================== */
 
 
 .place-card{
@@ -625,7 +704,11 @@ border-radius:30px;
 backdrop-filter:blur(15px);
 
 
+max-width:750px;
+
+
 }
+
 
 
 
@@ -644,13 +727,14 @@ border-radius:50px;
 border:1px solid rgba(255,255,255,.2);
 
 
-font-size:12px;
+font-size:11px;
 
 
 letter-spacing:4px;
 
 
 }
+
 
 
 
@@ -666,30 +750,38 @@ font-weight:900;
 margin:25px 0;
 
 
+text-transform:uppercase;
+
+
 }
+
 
 
 
 .place-divider{
 
 
-width:200px;
-
-
 height:1px;
+
+
+width:200px;
 
 
 background:white;
 
 
-opacity:.5;
+opacity:.4;
 
 
 }
 
 
 
+
 .place-address{
+
+
+margin-top:25px;
 
 
 font-size:18px;
@@ -705,13 +797,14 @@ color:#ddd;
 
 
 
+
 .place-note{
 
 
 margin-top:25px;
 
 
-color:#aaa;
+color:#999;
 
 
 line-height:1.6;
@@ -755,9 +848,9 @@ font-weight:900;
 
 
 
-/* ======================
-   DRESS CODE
-====================== */
+/* ===================
+ DRESS CODE
+=================== */
 
 
 .dress-code{
@@ -782,6 +875,7 @@ backdrop-filter:blur(15px);
 
 
 
+
 .dress-code p{
 
 
@@ -795,6 +889,7 @@ color:#ddd;
 
 
 }
+
 
 
 
@@ -814,6 +909,7 @@ margin-top:35px;
 
 
 
+
 .color{
 
 
@@ -830,6 +926,7 @@ border-radius:50%;
 
 
 
+
 .color.white{
 
 
@@ -837,6 +934,7 @@ background:white;
 
 
 }
+
 
 
 
@@ -850,23 +948,17 @@ border:1px solid #444;
 
 
 }
-
-
-
-
-
-/* ======================
+/* ===================
    TICKET
-====================== */
+=================== */
 
 
 .ticket-section{
 
-
 background:#070707;
 
-
 }
+
 
 
 
@@ -881,7 +973,6 @@ padding:45px;
 
 background:
 
-
 linear-gradient(
 
 145deg,
@@ -895,23 +986,20 @@ rgba(255,255,255,.02)
 
 border:
 
-1px solid rgba(255,255,255,.2);
-
+1px solid rgba(255,255,255,.18);
 
 
 border-radius:35px;
 
 
-
 position:relative;
-
 
 
 overflow:hidden;
 
 
-
 }
+
 
 
 
@@ -924,26 +1012,33 @@ content:"";
 position:absolute;
 
 
-inset:0;
+width:250px;
+
+
+height:250px;
+
+
+right:-80px;
+
+
+top:-80px;
 
 
 background:
 
 radial-gradient(
 
-circle at top right,
+circle,
 
-rgba(255,255,255,.12),
+rgba(255,255,255,.15),
 
-transparent 35%
+transparent 70%
 
 );
 
 
-pointer-events:none;
-
-
 }
+
 
 
 
@@ -963,6 +1058,7 @@ color:#aaa;
 
 
 
+
 .ticket-card h2{
 
 
@@ -973,19 +1069,21 @@ margin-top:30px;
 
 
 
+
 .ticket-line{
 
 
 height:1px;
 
 
-background:rgba(255,255,255,.25);
+background:rgba(255,255,255,.2);
 
 
 margin:30px 0;
 
 
 }
+
 
 
 
@@ -1005,6 +1103,7 @@ gap:20px;
 
 
 
+
 .ticket-info div{
 
 
@@ -1014,10 +1113,8 @@ display:flex;
 justify-content:space-between;
 
 
-gap:20px;
-
-
 }
+
 
 
 
@@ -1027,7 +1124,7 @@ gap:20px;
 color:#888;
 
 
-letter-spacing:3px;
+letter-spacing:4px;
 
 
 font-size:12px;
@@ -1035,15 +1132,6 @@ font-size:12px;
 
 }
 
-
-
-.ticket-info b{
-
-
-text-align:right;
-
-
-}
 
 
 
@@ -1074,9 +1162,12 @@ font-size:12px;
 
 
 
-/* ======================
-   FORM
-====================== */
+
+
+/* ===================
+ FORM
+=================== */
+
 
 
 .rsvp-form{
@@ -1107,7 +1198,9 @@ margin:10px 0;
 background:rgba(255,255,255,.05);
 
 
-border:1px solid rgba(255,255,255,.2);
+border:
+
+1px solid rgba(255,255,255,.2);
 
 
 border-radius:18px;
@@ -1154,9 +1247,9 @@ cursor:pointer;
 
 
 
-/* ======================
-   SUCCESS
-====================== */
+/* ===================
+ SUCCESS POPUP
+=================== */
 
 
 .success-overlay{
@@ -1199,6 +1292,7 @@ transition:.3s;
 
 
 
+
 .success-overlay.active{
 
 
@@ -1209,6 +1303,7 @@ visibility:visible;
 
 
 }
+
 
 
 
@@ -1234,6 +1329,7 @@ border-radius:30px;
 
 
 }
+
 
 
 
@@ -1277,13 +1373,18 @@ font-weight:900;
 
 
 
+
 .success-card h3{
 
 
 font-size:40px;
 
 
+margin:25px 0;
+
+
 }
+
 
 
 
@@ -1303,6 +1404,7 @@ color:#ddd;
 
 
 
+
 .success-event{
 
 
@@ -1318,10 +1420,14 @@ border-top:1px solid rgba(255,255,255,.2);
 letter-spacing:4px;
 
 
+font-size:12px;
+
+
 color:#aaa;
 
 
 }
+
 
 
 
@@ -1331,7 +1437,19 @@ color:#aaa;
 margin-top:30px;
 
 
+background:white;
+
+
+color:black;
+
+
 border:none;
+
+
+padding:15px 35px;
+
+
+border-radius:50px;
 
 
 }
@@ -1340,9 +1458,9 @@ border:none;
 
 
 
-/* ======================
-   MOBILE
-====================== */
+/* ===================
+ MOBILE
+=================== */
 
 
 @media(max-width:700px){
@@ -1351,7 +1469,9 @@ border:none;
 
 section{
 
+
 padding:18vw 7vw;
+
 
 }
 
@@ -1359,7 +1479,9 @@ padding:18vw 7vw;
 
 h1{
 
+
 font-size:55px;
+
 
 }
 
@@ -1367,55 +1489,9 @@ font-size:55px;
 
 h2{
 
+
 font-size:45px;
 
-}
-
-
-
-.timer{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
-
-
-.timer-box b{
-
-font-size:38px;
-
-}
-
-
-
-.place-name{
-
-font-size:32px;
-
-}
-
-
-
-.ticket-card{
-
-padding:30px 20px;
-
-}
-
-
-
-.ticket-info div{
-
-flex-direction:column;
-
-}
-
-
-
-.ticket-info b{
-
-text-align:left;
 
 }
 
@@ -1423,7 +1499,76 @@ text-align:left;
 
 .hero-side-label{
 
+
 display:none;
+
+
+}
+
+
+
+
+.timer{
+
+
+grid-template-columns:repeat(2,1fr);
+
+
+}
+
+
+
+.timer-box b{
+
+
+font-size:38px;
+
+
+}
+
+
+
+.place-name{
+
+
+font-size:32px;
+
+
+}
+
+
+
+.ticket-card{
+
+
+padding:30px 20px;
+
+
+}
+
+
+
+.ticket-info div{
+
+
+flex-direction:column;
+
+
+gap:8px;
+
+
+}
+
+
+
+.hero-corner{
+
+
+right:20px;
+
+
+top:20px;
+
 
 }
 
