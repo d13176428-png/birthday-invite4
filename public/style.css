@@ -58,6 +58,7 @@ margin:auto;
 
 
 
+
 section{
 
 min-height:100vh;
@@ -80,9 +81,8 @@ overflow:hidden;
 
 
 
-
 /* =====================
-   TEXT
+TEXT
 ===================== */
 
 
@@ -98,7 +98,10 @@ color:#aaa;
 
 margin-bottom:25px;
 
+text-transform:uppercase;
+
 }
+
 
 
 
@@ -107,80 +110,107 @@ h1{
 
 margin:0;
 
+
 font-size:
 
-clamp(70px,12vw,130px);
+clamp(80px,11vw,140px);
 
-line-height:.82;
 
-letter-spacing:-6px;
+
+line-height:.78;
+
+
+letter-spacing:-7px;
+
 
 font-weight:900;
 
+
 text-transform:uppercase;
 
+
 }
+
+
 
 
 
 h1 span{
 
+
 color:transparent;
+
 
 -webkit-text-stroke:
 
 2px rgba(255,255,255,.85);
 
-}
 
+}
 
 
 
 
 h2{
 
+
 margin:0 0 35px;
+
 
 font-size:
 
 clamp(45px,8vw,90px);
 
+
+
 line-height:.9;
+
 
 letter-spacing:-4px;
 
+
 font-weight:900;
+
 
 text-transform:uppercase;
 
+
 }
+
 
 
 
 
 
 /* =====================
-   HERO
+HERO
 ===================== */
 
 
 .hero{
 
+
 isolation:isolate;
+
 
 }
 
 
 
 
+
 .hero-bg{
 
+
 position:absolute;
+
 
 inset:0;
 
 
+
 background:
+
 
 url("graffiti-bw.jpg")
 
@@ -189,6 +219,7 @@ center/cover no-repeat;
 
 
 filter:
+
 
 grayscale(100%)
 
@@ -204,7 +235,8 @@ z-index:-5;
 
 animation:
 
-bgMove 20s infinite alternate ease-in-out;
+
+cinemaZoom 25s infinite alternate ease-in-out;
 
 
 }
@@ -212,19 +244,24 @@ bgMove 20s infinite alternate ease-in-out;
 
 
 
-@keyframes bgMove{
+
+@keyframes cinemaZoom{
 
 
 from{
 
-transform:scale(1.05);
+
+transform:scale(1);
+
 
 }
 
 
 to{
 
-transform:scale(1.12) translateX(-25px);
+
+transform:scale(1.15);
+
 
 }
 
@@ -270,8 +307,9 @@ z-index:-4;
 
 
 
+
 /* =====================
-   SMOKE
+SMOKE
 ===================== */
 
 
@@ -284,20 +322,13 @@ position:absolute;
 border-radius:50%;
 
 
-filter:blur(90px);
-
-
 pointer-events:none;
 
 
 z-index:2;
 
 
-opacity:.35;
-
-
 }
-
 
 
 
@@ -305,16 +336,17 @@ opacity:.35;
 .hero-smoke-1{
 
 
-width:420px;
+width:550px;
 
 
-height:420px;
+height:550px;
 
 
-left:-120px;
+
+left:-200px;
 
 
-top:-100px;
+top:-150px;
 
 
 
@@ -325,21 +357,26 @@ radial-gradient(
 
 circle,
 
-rgba(255,255,255,.4),
+rgba(255,255,255,.25),
 
-transparent 70%
+transparent 65%
 
 );
 
 
 
+filter:blur(120px);
+
+
+
 animation:
 
-smokeLeft 14s infinite alternate;
 
+smokeLeft 20s infinite alternate ease-in-out;
 
 
 }
+
 
 
 
@@ -347,16 +384,17 @@ smokeLeft 14s infinite alternate;
 .hero-smoke-2{
 
 
-width:500px;
+width:600px;
 
 
-height:500px;
+height:600px;
 
 
-right:-160px;
+
+right:-250px;
 
 
-bottom:-150px;
+bottom:-200px;
 
 
 
@@ -367,22 +405,25 @@ radial-gradient(
 
 circle,
 
-rgba(255,255,255,.3),
+rgba(255,255,255,.18),
 
-transparent 70%
+transparent 65%
 
 );
 
 
 
+filter:blur(130px);
+
+
+
 animation:
 
-smokeRight 18s infinite alternate;
 
+smokeRight 25s infinite alternate ease-in-out;
 
 
 }
-
 
 
 
@@ -393,14 +434,18 @@ smokeRight 18s infinite alternate;
 
 from{
 
+
 transform:translate(0,0);
+
 
 }
 
 
 to{
 
-transform:translate(100px,50px);
+
+transform:translate(120px,70px);
+
 
 }
 
@@ -415,42 +460,40 @@ transform:translate(100px,50px);
 
 from{
 
+
 transform:translate(0,0);
+
 
 }
 
 
 to{
 
-transform:translate(-100px,-60px);
+
+transform:translate(-120px,-80px);
+
 
 }
 
 
 }
-
-
-
-
-
-
-/* HERO CONTENT */
+/* =====================
+HERO CONTENT
+===================== */
 
 
 .hero-content{
 
-
 position:relative;
-
 
 z-index:5;
 
+padding-top:40px;
 
 
 animation:
 
 heroShow 1.2s ease;
-
 
 }
 
@@ -462,28 +505,35 @@ heroShow 1.2s ease;
 
 from{
 
+
 opacity:0;
+
 
 transform:translateY(40px);
 
+
 filter:blur(8px);
+
 
 }
 
 
 to{
 
+
 opacity:1;
+
 
 transform:translateY(0);
 
+
 filter:blur(0);
 
-}
-
 
 }
 
+
+}
 
 
 
@@ -510,19 +560,65 @@ margin-bottom:35px;
 .hero-subtitle{
 
 
-margin-top:25px;
+margin-top:35px;
 
 
-font-size:14px;
+font-size:13px;
 
 
-letter-spacing:8px;
+letter-spacing:10px;
 
 
 font-weight:800;
 
 
+color:#ddd;
+
+
 }
+
+
+
+
+
+.invite-text{
+
+
+margin-top:30px;
+
+
+font-size:18px;
+
+
+line-height:1.6;
+
+
+color:#ddd;
+
+
+}
+
+
+
+
+.hero-date{
+
+
+margin-top:12px;
+
+
+font-size:26px;
+
+
+font-weight:800;
+
+
+letter-spacing:1px;
+
+
+}
+
+
 
 
 
@@ -545,105 +641,7 @@ margin:35px 0;
 
 
 }
-/* =====================
-   HERO DATE
-===================== */
 
-
-.hero-number{
-
-
-position:absolute;
-
-
-right:50px;
-
-
-top:50%;
-
-
-transform:translateY(-50%);
-
-
-
-display:flex;
-
-
-flex-direction:column;
-
-
-align-items:center;
-
-
-
-font-size:18px;
-
-
-letter-spacing:8px;
-
-
-color:rgba(255,255,255,.5);
-
-
-
-z-index:4;
-
-
-}
-
-
-
-
-.hero-number span{
-
-
-font-size:120px;
-
-
-font-weight:900;
-
-
-line-height:.8;
-
-
-letter-spacing:-8px;
-
-
-color:white;
-
-
-}
-
-
-
-
-
-.hero-bottom{
-
-
-position:absolute;
-
-
-bottom:40px;
-
-
-left:50%;
-
-
-transform:translateX(-50%);
-
-
-
-font-size:11px;
-
-
-letter-spacing:12px;
-
-
-color:#888;
-
-
-}
 
 
 
@@ -673,25 +671,38 @@ margin-top:35px;
 padding:15px 25px;
 
 
-
 border-radius:50px;
-
 
 
 background:rgba(255,255,255,.07);
 
 
-
 border:1px solid rgba(255,255,255,.2);
-
 
 
 backdrop-filter:blur(15px);
 
 
-
 font-weight:800;
 
+
+transition:.3s;
+
+
+}
+
+
+
+.hero-pill:hover{
+
+
+background:white;
+
+
+color:black;
+
+
+transform:translateY(-5px);
 
 
 }
@@ -700,10 +711,11 @@ font-weight:800;
 
 
 
-/* =====================
-   TIMER
-===================== */
 
+
+/* =====================
+TIMER
+===================== */
 
 
 .timer{
@@ -722,33 +734,36 @@ gap:15px;
 
 
 
+
 .timer-box{
 
 
 padding:30px 15px;
 
 
-
 background:rgba(255,255,255,.05);
-
 
 
 border:1px solid rgba(255,255,255,.15);
 
 
-
 border-radius:25px;
-
 
 
 backdrop-filter:blur(15px);
 
 
-
 text-align:center;
 
 
+box-shadow:
+
+0 25px 60px rgba(0,0,0,.35);
+
+
 }
+
+
 
 
 
@@ -765,6 +780,7 @@ font-weight:900;
 
 
 }
+
 
 
 
@@ -805,8 +821,9 @@ color:#aaa;
 
 
 
+
 /* =====================
-   LOCATION
+LOCATION
 ===================== */
 
 
@@ -819,20 +836,21 @@ max-width:750px;
 padding:35px;
 
 
-
 background:rgba(255,255,255,.05);
-
 
 
 border:1px solid rgba(255,255,255,.15);
 
 
-
 border-radius:30px;
 
 
-
 backdrop-filter:blur(15px);
+
+
+box-shadow:
+
+0 30px 80px rgba(0,0,0,.5);
 
 
 }
@@ -846,28 +864,22 @@ backdrop-filter:blur(15px);
 display:inline-block;
 
 
-
 padding:10px 20px;
-
 
 
 border-radius:50px;
 
 
-
 border:1px solid rgba(255,255,255,.2);
 
 
-
 font-size:11px;
-
 
 
 letter-spacing:4px;
 
 
 }
-
 
 
 
@@ -884,6 +896,9 @@ font-weight:900;
 margin:25px 0;
 
 
+text-transform:uppercase;
+
+
 }
 
 
@@ -893,10 +908,10 @@ margin:25px 0;
 .place-divider{
 
 
-width:200px;
-
-
 height:1px;
+
+
+width:200px;
 
 
 background:white;
@@ -906,6 +921,7 @@ opacity:.4;
 
 
 }
+
 
 
 
@@ -930,6 +946,7 @@ color:#ddd;
 
 
 
+
 .place-note{
 
 
@@ -947,38 +964,35 @@ line-height:1.6;
 
 
 
+
 .map-button{
 
 
 display:inline-flex;
 
 
-
 margin-top:25px;
-
 
 
 padding:17px 35px;
 
 
-
 background:white;
-
 
 
 color:black;
 
 
-
 border-radius:50px;
-
 
 
 text-decoration:none;
 
 
-
 font-weight:900;
+
+
+transition:.3s;
 
 
 }
@@ -986,10 +1000,15 @@ font-weight:900;
 
 
 
+.map-button:hover{
 
 
+transform:translateY(-5px);
+
+
+}
 /* =====================
-   DRESS CODE
+DRESS CODE
 ===================== */
 
 
@@ -997,7 +1016,6 @@ font-weight:900;
 
 
 padding:40px;
-
 
 
 background:rgba(255,255,255,.04);
@@ -1016,7 +1034,14 @@ backdrop-filter:blur(15px);
 
 
 
+box-shadow:
+
+0 30px 80px rgba(0,0,0,.5);
+
+
+
 }
+
 
 
 
@@ -1038,6 +1063,7 @@ color:#ddd;
 
 
 
+
 .colors{
 
 
@@ -1055,7 +1081,6 @@ margin-top:35px;
 
 
 
-
 .color{
 
 
@@ -1069,7 +1094,6 @@ border-radius:50%;
 
 
 }
-
 
 
 
@@ -1094,194 +1118,7 @@ border:1px solid #444;
 
 
 }
-/* =====================
-   TICKET
-===================== */
 
-
-.ticket-card{
-
-
-max-width:650px;
-
-
-padding:45px;
-
-
-background:
-
-linear-gradient(
-
-145deg,
-
-rgba(255,255,255,.08),
-
-rgba(255,255,255,.02)
-
-);
-
-
-
-border:1px solid rgba(255,255,255,.18);
-
-
-
-border-radius:35px;
-
-
-
-position:relative;
-
-
-
-overflow:hidden;
-
-
-}
-
-
-
-.ticket-card::before{
-
-
-content:"";
-
-
-position:absolute;
-
-
-width:300px;
-
-
-height:300px;
-
-
-right:-120px;
-
-
-top:-120px;
-
-
-background:
-
-
-radial-gradient(
-
-circle,
-
-rgba(255,255,255,.15),
-
-transparent 70%
-
-);
-
-
-}
-
-
-
-.ticket-top{
-
-
-font-size:12px;
-
-
-letter-spacing:7px;
-
-
-color:#aaa;
-
-
-}
-
-
-
-
-.ticket-line{
-
-
-height:1px;
-
-
-background:rgba(255,255,255,.2);
-
-
-margin:30px 0;
-
-
-}
-
-
-
-
-.ticket-info{
-
-
-display:flex;
-
-
-flex-direction:column;
-
-
-gap:20px;
-
-
-}
-
-
-
-
-.ticket-info div{
-
-
-display:flex;
-
-
-justify-content:space-between;
-
-
-}
-
-
-
-.ticket-info span{
-
-
-font-size:12px;
-
-
-letter-spacing:4px;
-
-
-color:#888;
-
-
-}
-
-
-
-.ticket-status{
-
-
-margin-top:35px;
-
-
-padding-top:25px;
-
-
-border-top:1px dashed rgba(255,255,255,.25);
-
-
-letter-spacing:5px;
-
-
-color:#aaa;
-
-
-font-size:12px;
-
-
-}
 
 
 
@@ -1289,7 +1126,7 @@ font-size:12px;
 
 
 /* =====================
-   FORM
+FORM
 ===================== */
 
 
@@ -1300,6 +1137,7 @@ max-width:700px;
 
 
 }
+
 
 
 
@@ -1347,6 +1185,8 @@ min-height:130px;
 
 
 
+
+
 button{
 
 
@@ -1362,14 +1202,30 @@ font-weight:900;
 cursor:pointer;
 
 
+transition:.3s;
+
+
+}
+
+
+
+
+button:hover{
+
+
+transform:translateY(-4px);
+
+
 }
 
 
 
 
 
+
+
 /* =====================
-   SUCCESS POPUP
+SUCCESS POPUP
 ===================== */
 
 
@@ -1385,10 +1241,10 @@ inset:0;
 display:flex;
 
 
-justify-content:center;
-
-
 align-items:center;
+
+
+justify-content:center;
 
 
 background:rgba(0,0,0,.8);
@@ -1414,6 +1270,7 @@ transition:.3s;
 
 
 
+
 .success-overlay.active{
 
 
@@ -1424,6 +1281,8 @@ visibility:visible;
 
 
 }
+
+
 
 
 
@@ -1449,7 +1308,13 @@ border-radius:30px;
 text-align:center;
 
 
+box-shadow:
+
+0 30px 100px rgba(0,0,0,.7);
+
+
 }
+
 
 
 
@@ -1469,10 +1334,10 @@ margin:auto;
 display:flex;
 
 
-justify-content:center;
-
-
 align-items:center;
+
+
+justify-content:center;
 
 
 border-radius:50%;
@@ -1495,6 +1360,7 @@ font-weight:900;
 
 
 
+
 .success-card h3{
 
 
@@ -1505,6 +1371,7 @@ margin:25px 0;
 
 
 }
+
 
 
 
@@ -1526,6 +1393,7 @@ color:#ddd;
 
 
 
+
 .success-event{
 
 
@@ -1538,10 +1406,10 @@ padding-top:20px;
 border-top:1px solid rgba(255,255,255,.2);
 
 
-letter-spacing:5px;
-
-
 font-size:12px;
+
+
+letter-spacing:5px;
 
 
 color:#aaa;
@@ -1552,13 +1420,11 @@ color:#aaa;
 
 
 
+
 .success-btn{
 
 
 margin-top:30px;
-
-
-border:none;
 
 
 background:white;
@@ -1573,6 +1439,9 @@ padding:15px 35px;
 border-radius:50px;
 
 
+border:none;
+
+
 }
 
 
@@ -1580,9 +1449,8 @@ border-radius:50px;
 
 
 
-
 /* =====================
-   MOBILE
+MOBILE
 ===================== */
 
 
@@ -1611,7 +1479,6 @@ font-size:60px;
 
 
 
-
 h2{
 
 
@@ -1623,37 +1490,21 @@ font-size:45px;
 
 
 
-
-.hero-number{
-
-
-right:15px;
+.hero-subtitle{
 
 
-opacity:.3;
+letter-spacing:5px;
 
 
 }
 
 
 
-.hero-number span{
+
+.hero-date{
 
 
-font-size:70px;
-
-
-}
-
-
-
-.hero-bottom{
-
-
-font-size:9px;
-
-
-letter-spacing:7px;
+font-size:22px;
 
 
 }
@@ -1683,7 +1534,6 @@ font-size:38px;
 
 
 
-
 .place-name{
 
 
@@ -1695,7 +1545,30 @@ font-size:32px;
 
 
 
-.ticket-card{
+.dress-code{
+
+
+padding:25px;
+
+
+}
+
+
+
+
+
+.dress-code p{
+
+
+font-size:19px;
+
+
+}
+
+
+
+
+.success-card{
 
 
 padding:30px 20px;
@@ -1706,207 +1579,13 @@ padding:30px 20px;
 
 
 
-
-.ticket-info div{
-
-
-flex-direction:column;
+.success-card h3{
 
 
-gap:8px;
+font-size:32px;
 
 
 }
 
 
-
-.hero-side-label{
-
-
-display:none;
-
-
 }
-
-
-
-}
-/* =====================
- PREMIUM POSTER DETAILS
-===================== */
-
-
-.hero::after{
-
-content:"";
-
-position:absolute;
-
-inset:25px;
-
-border:1px solid rgba(255,255,255,.12);
-
-pointer-events:none;
-
-z-index:4;
-
-}
-
-
-
-.hero h1{
-
-text-shadow:
-
-0 0 40px rgba(255,255,255,.08);
-
-}
-
-
-
-.hero-mini::after{
-
-content:" / MOSCOW REGION";
-
-color:#666;
-
-}
-
-
-
-
-
-.hero::before{
-
-content:"ONLY INVITED GUESTS";
-
-position:absolute;
-
-bottom:45px;
-
-right:45px;
-
-font-size:10px;
-
-letter-spacing:6px;
-
-color:rgba(255,255,255,.35);
-
-z-index:5;
-
-}
-
-
-
-.hero-number{
-
-text-shadow:
-
-0 0 40px rgba(255,255,255,.15);
-
-}
-
-
-
-
-
-/* дополнительный дым */
-
-.hero-smoke-1{
-
-animation:
-
-smokeLeft 18s infinite alternate ease-in-out;
-
-}
-
-
-
-.hero-smoke-2{
-
-animation:
-
-smokeRight 22s infinite alternate ease-in-out;
-
-}
-/* FINAL HERO POLISH */
-
-
-.hero-content{
-
-padding-top:40px;
-
-}
-
-
-
-.hero h1{
-
-font-size:clamp(80px,11vw,140px);
-
-line-height:.78;
-
-}
-
-
-
-.hero-subtitle{
-
-margin-top:35px;
-
-font-size:13px;
-
-letter-spacing:10px;
-
-color:#ddd;
-
-}
-
-
-
-.invite-text{
-
-margin-top:30px;
-
-font-size:18px;
-
-line-height:1.6;
-
-color:#ddd;
-
-}
-
-
-
-.hero-date{
-
-margin-top:12px;
-
-font-size:26px;
-
-font-weight:800;
-
-letter-spacing:1px;
-
-}
-
-
-
-.hero-pill{
-
-transition:.3s;
-
-}
-
-
-
-.hero-pill:hover{
-
-background:white;
-
-color:black;
-
-transform:translateY(-5px);
-
-}
-
