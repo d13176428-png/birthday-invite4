@@ -39,8 +39,6 @@ overflow-x:hidden;
 
 
 
-/* убираем сетку */
-
 body::before{
 
 content:none;
@@ -68,9 +66,9 @@ padding:8vw;
 
 display:flex;
 
-justify-content:center;
-
 flex-direction:column;
+
+justify-content:center;
 
 position:relative;
 
@@ -80,6 +78,12 @@ overflow:hidden;
 
 
 
+
+
+
+/* =====================
+   TEXT
+===================== */
 
 
 .label{
@@ -99,16 +103,17 @@ margin-bottom:25px;
 
 
 
-
 h1{
 
 margin:0;
 
-font-size:clamp(60px,10vw,120px);
+font-size:
 
-line-height:.85;
+clamp(70px,12vw,130px);
 
-letter-spacing:-5px;
+line-height:.82;
+
+letter-spacing:-6px;
 
 font-weight:900;
 
@@ -122,7 +127,9 @@ h1 span{
 
 color:transparent;
 
--webkit-text-stroke:2px white;
+-webkit-text-stroke:
+
+2px rgba(255,255,255,.85);
 
 }
 
@@ -134,7 +141,9 @@ h2{
 
 margin:0 0 35px;
 
-font-size:clamp(45px,8vw,85px);
+font-size:
+
+clamp(45px,8vw,90px);
 
 line-height:.9;
 
@@ -150,9 +159,9 @@ text-transform:uppercase;
 
 
 
-/* ===================
- HERO
-=================== */
+/* =====================
+   HERO
+===================== */
 
 
 .hero{
@@ -163,11 +172,13 @@ isolation:isolate;
 
 
 
+
 .hero-bg{
 
 position:absolute;
 
 inset:0;
+
 
 background:
 
@@ -176,21 +187,25 @@ url("graffiti-bw.jpg")
 center/cover no-repeat;
 
 
+
 filter:
 
 grayscale(100%)
 
-brightness(.35)
+brightness(.22)
 
-contrast(1.2);
+contrast(1.25);
+
 
 
 z-index:-5;
 
 
+
 animation:
 
 bgMove 20s infinite alternate ease-in-out;
+
 
 }
 
@@ -209,24 +224,30 @@ transform:scale(1.05);
 
 to{
 
-transform:scale(1.12) translateX(-20px);
+transform:scale(1.12) translateX(-25px);
 
 }
 
 
 }
+
+
 
 
 
 
 .hero-overlay{
 
+
 position:absolute;
+
 
 inset:0;
 
 
+
 background:
+
 
 linear-gradient(
 
@@ -234,12 +255,14 @@ linear-gradient(
 
 rgba(0,0,0,.25),
 
-rgba(0,0,0,.9)
+rgba(0,0,0,.92)
 
 );
 
 
+
 z-index:-4;
+
 
 }
 
@@ -247,54 +270,74 @@ z-index:-4;
 
 
 
-
-/* ДЫМ */
+/* =====================
+   SMOKE
+===================== */
 
 
 .hero-smoke{
 
+
 position:absolute;
+
 
 border-radius:50%;
 
+
 filter:blur(90px);
 
-z-index:-2;
 
 pointer-events:none;
 
+
+z-index:2;
+
+
+opacity:.35;
+
+
 }
+
 
 
 
 
 .hero-smoke-1{
 
-width:400px;
 
-height:400px;
+width:420px;
 
-left:-100px;
+
+height:420px;
+
+
+left:-120px;
+
 
 top:-100px;
 
 
+
 background:
+
 
 radial-gradient(
 
 circle,
 
-rgba(255,255,255,.35),
+rgba(255,255,255,.4),
 
 transparent 70%
 
 );
 
 
+
 animation:
 
-smokeOne 14s infinite alternate;
+smokeLeft 14s infinite alternate;
+
+
 
 }
 
@@ -303,91 +346,111 @@ smokeOne 14s infinite alternate;
 
 .hero-smoke-2{
 
-width:450px;
 
-height:450px;
+width:500px;
 
-right:-150px;
 
-bottom:-100px;
+height:500px;
+
+
+right:-160px;
+
+
+bottom:-150px;
+
 
 
 background:
+
 
 radial-gradient(
 
 circle,
 
-rgba(255,255,255,.25),
+rgba(255,255,255,.3),
 
 transparent 70%
 
 );
 
 
+
 animation:
 
-smokeTwo 18s infinite alternate;
+smokeRight 18s infinite alternate;
+
+
 
 }
 
 
 
-@keyframes smokeOne{
+
+
+
+@keyframes smokeLeft{
+
 
 from{
 
 transform:translate(0,0);
 
-opacity:.25;
-
 }
+
 
 to{
 
-transform:translate(80px,50px);
-
-opacity:.45;
-
-}
+transform:translate(100px,50px);
 
 }
 
 
+}
 
-@keyframes smokeTwo{
+
+
+
+@keyframes smokeRight{
+
 
 from{
 
 transform:translate(0,0);
 
-opacity:.2;
-
 }
+
 
 to{
 
-transform:translate(-80px,-50px);
-
-opacity:.4;
+transform:translate(-100px,-60px);
 
 }
 
+
 }
-/* ===================
- HERO CONTENT
-=================== */
+
+
+
+
+
+
+/* HERO CONTENT */
 
 
 .hero-content{
 
+
 position:relative;
 
+
 z-index:5;
+
+
 
 animation:
 
 heroShow 1.2s ease;
+
 
 }
 
@@ -425,22 +488,105 @@ filter:blur(0);
 
 
 
+.hero-mini{
+
+
+font-size:12px;
+
+
+letter-spacing:8px;
+
+
+color:#aaa;
+
+
+margin-bottom:35px;
+
+
+}
+
+
+
 .hero-subtitle{
 
 
 margin-top:25px;
 
 
-font-size:15px;
+font-size:14px;
 
 
-letter-spacing:7px;
+letter-spacing:8px;
 
 
 font-weight:800;
 
 
-color:#ddd;
+}
+
+
+
+.hero-line{
+
+
+width:140px;
+
+
+height:1px;
+
+
+background:white;
+
+
+opacity:.5;
+
+
+margin:35px 0;
+
+
+}
+/* =====================
+   HERO DATE
+===================== */
+
+
+.hero-number{
+
+
+position:absolute;
+
+
+right:50px;
+
+
+top:50%;
+
+
+transform:translateY(-50%);
+
+
+
+display:flex;
+
+
+flex-direction:column;
+
+
+align-items:center;
+
+
+
+font-size:18px;
+
+
+letter-spacing:8px;
+
+
+color:rgba(255,255,255,.5);
+
+
+
+z-index:4;
 
 
 }
@@ -448,19 +594,53 @@ color:#ddd;
 
 
 
-.invite-text{
+.hero-number span{
 
 
-margin-top:35px;
+font-size:120px;
 
 
-font-size:20px;
+font-weight:900;
 
 
-line-height:1.7;
+line-height:.8;
 
 
-color:#ddd;
+letter-spacing:-8px;
+
+
+color:white;
+
+
+}
+
+
+
+
+
+.hero-bottom{
+
+
+position:absolute;
+
+
+bottom:40px;
+
+
+left:50%;
+
+
+transform:translateX(-50%);
+
+
+
+font-size:11px;
+
+
+letter-spacing:12px;
+
+
+color:#888;
 
 
 }
@@ -493,87 +673,26 @@ margin-top:35px;
 padding:15px 25px;
 
 
+
 border-radius:50px;
+
 
 
 background:rgba(255,255,255,.07);
 
 
+
 border:1px solid rgba(255,255,255,.2);
+
 
 
 backdrop-filter:blur(15px);
 
 
+
 font-weight:800;
 
 
-}
-
-
-
-
-.hero-corner{
-
-
-position:absolute;
-
-
-top:30px;
-
-
-right:30px;
-
-
-display:flex;
-
-
-flex-direction:column;
-
-
-align-items:flex-end;
-
-
-gap:5px;
-
-
-font-size:12px;
-
-
-letter-spacing:5px;
-
-
-color:#ddd;
-
-
-}
-
-
-
-
-.hero-side-label{
-
-
-position:absolute;
-
-
-left:-45px;
-
-
-top:50%;
-
-
-transform:rotate(-90deg);
-
-
-font-size:11px;
-
-
-letter-spacing:6px;
-
-
-color:#777;
-
 
 }
 
@@ -581,9 +700,9 @@ color:#777;
 
 
 
-/* ===================
- TIMER
-=================== */
+/* =====================
+   TIMER
+===================== */
 
 
 
@@ -609,16 +728,21 @@ gap:15px;
 padding:30px 15px;
 
 
-background:rgba(255,255,255,.04);
+
+background:rgba(255,255,255,.05);
 
 
-border:1px solid rgba(255,255,255,.14);
+
+border:1px solid rgba(255,255,255,.15);
+
 
 
 border-radius:25px;
 
 
+
 backdrop-filter:blur(15px);
+
 
 
 text-align:center;
@@ -681,30 +805,34 @@ color:#aaa;
 
 
 
-/* ===================
- LOCATION
-=================== */
+/* =====================
+   LOCATION
+===================== */
 
 
 .place-card{
 
 
+max-width:750px;
+
+
 padding:35px;
+
 
 
 background:rgba(255,255,255,.05);
 
 
+
 border:1px solid rgba(255,255,255,.15);
+
 
 
 border-radius:30px;
 
 
+
 backdrop-filter:blur(15px);
-
-
-max-width:750px;
 
 
 }
@@ -718,22 +846,28 @@ max-width:750px;
 display:inline-block;
 
 
+
 padding:10px 20px;
+
 
 
 border-radius:50px;
 
 
+
 border:1px solid rgba(255,255,255,.2);
 
 
+
 font-size:11px;
+
 
 
 letter-spacing:4px;
 
 
 }
+
 
 
 
@@ -750,10 +884,8 @@ font-weight:900;
 margin:25px 0;
 
 
-text-transform:uppercase;
-
-
 }
+
 
 
 
@@ -761,10 +893,10 @@ text-transform:uppercase;
 .place-divider{
 
 
-height:1px;
-
-
 width:200px;
+
+
+height:1px;
 
 
 background:white;
@@ -821,22 +953,29 @@ line-height:1.6;
 display:inline-flex;
 
 
+
 margin-top:25px;
+
 
 
 padding:17px 35px;
 
 
+
 background:white;
+
 
 
 color:black;
 
 
+
 border-radius:50px;
 
 
+
 text-decoration:none;
+
 
 
 font-weight:900;
@@ -848,9 +987,10 @@ font-weight:900;
 
 
 
-/* ===================
- DRESS CODE
-=================== */
+
+/* =====================
+   DRESS CODE
+===================== */
 
 
 .dress-code{
@@ -859,16 +999,21 @@ font-weight:900;
 padding:40px;
 
 
+
 background:rgba(255,255,255,.04);
+
 
 
 border:1px solid rgba(255,255,255,.15);
 
 
+
 border-radius:30px;
 
 
+
 backdrop-filter:blur(15px);
+
 
 
 }
@@ -906,6 +1051,7 @@ margin-top:35px;
 
 
 }
+
 
 
 
@@ -948,18 +1094,9 @@ border:1px solid #444;
 
 
 }
-/* ===================
+/* =====================
    TICKET
-=================== */
-
-
-.ticket-section{
-
-background:#070707;
-
-}
-
-
+===================== */
 
 
 .ticket-card{
@@ -984,22 +1121,23 @@ rgba(255,255,255,.02)
 );
 
 
-border:
 
-1px solid rgba(255,255,255,.18);
+border:1px solid rgba(255,255,255,.18);
+
 
 
 border-radius:35px;
 
 
+
 position:relative;
+
 
 
 overflow:hidden;
 
 
 }
-
 
 
 
@@ -1012,19 +1150,20 @@ content:"";
 position:absolute;
 
 
-width:250px;
+width:300px;
 
 
-height:250px;
+height:300px;
 
 
-right:-80px;
+right:-120px;
 
 
-top:-80px;
+top:-120px;
 
 
 background:
+
 
 radial-gradient(
 
@@ -1041,28 +1180,16 @@ transparent 70%
 
 
 
-
 .ticket-top{
 
 
 font-size:12px;
 
 
-letter-spacing:6px;
+letter-spacing:7px;
 
 
 color:#aaa;
-
-
-}
-
-
-
-
-.ticket-card h2{
-
-
-margin-top:30px;
 
 
 }
@@ -1117,21 +1244,19 @@ justify-content:space-between;
 
 
 
-
 .ticket-info span{
-
-
-color:#888;
-
-
-letter-spacing:4px;
 
 
 font-size:12px;
 
 
-}
+letter-spacing:4px;
 
+
+color:#888;
+
+
+}
 
 
 
@@ -1147,10 +1272,10 @@ padding-top:25px;
 border-top:1px dashed rgba(255,255,255,.25);
 
 
-color:#aaa;
-
-
 letter-spacing:5px;
+
+
+color:#aaa;
 
 
 font-size:12px;
@@ -1163,11 +1288,9 @@ font-size:12px;
 
 
 
-
-/* ===================
- FORM
-=================== */
-
+/* =====================
+   FORM
+===================== */
 
 
 .rsvp-form{
@@ -1198,9 +1321,7 @@ margin:10px 0;
 background:rgba(255,255,255,.05);
 
 
-border:
-
-1px solid rgba(255,255,255,.2);
+border:1px solid rgba(255,255,255,.2);
 
 
 border-radius:18px;
@@ -1247,9 +1368,9 @@ cursor:pointer;
 
 
 
-/* ===================
- SUCCESS POPUP
-=================== */
+/* =====================
+   SUCCESS POPUP
+===================== */
 
 
 .success-overlay{
@@ -1264,10 +1385,10 @@ inset:0;
 display:flex;
 
 
-align-items:center;
-
-
 justify-content:center;
+
+
+align-items:center;
 
 
 background:rgba(0,0,0,.8);
@@ -1316,9 +1437,6 @@ width:min(90%,500px);
 padding:40px;
 
 
-text-align:center;
-
-
 background:rgba(255,255,255,.06);
 
 
@@ -1326,6 +1444,9 @@ border:1px solid rgba(255,255,255,.2);
 
 
 border-radius:30px;
+
+
+text-align:center;
 
 
 }
@@ -1348,10 +1469,10 @@ margin:auto;
 display:flex;
 
 
-align-items:center;
-
-
 justify-content:center;
+
+
+align-items:center;
 
 
 border-radius:50%;
@@ -1417,7 +1538,7 @@ padding-top:20px;
 border-top:1px solid rgba(255,255,255,.2);
 
 
-letter-spacing:4px;
+letter-spacing:5px;
 
 
 font-size:12px;
@@ -1437,13 +1558,13 @@ color:#aaa;
 margin-top:30px;
 
 
+border:none;
+
+
 background:white;
 
 
 color:black;
-
-
-border:none;
 
 
 padding:15px 35px;
@@ -1458,9 +1579,11 @@ border-radius:50px;
 
 
 
-/* ===================
- MOBILE
-=================== */
+
+
+/* =====================
+   MOBILE
+===================== */
 
 
 @media(max-width:700px){
@@ -1477,13 +1600,15 @@ padding:18vw 7vw;
 
 
 
+
 h1{
 
 
-font-size:55px;
+font-size:60px;
 
 
 }
+
 
 
 
@@ -1497,10 +1622,38 @@ font-size:45px;
 
 
 
-.hero-side-label{
 
 
-display:none;
+.hero-number{
+
+
+right:15px;
+
+
+opacity:.3;
+
+
+}
+
+
+
+.hero-number span{
+
+
+font-size:70px;
+
+
+}
+
+
+
+.hero-bottom{
+
+
+font-size:9px;
+
+
+letter-spacing:7px;
 
 
 }
@@ -1518,6 +1671,7 @@ grid-template-columns:repeat(2,1fr);
 
 
 
+
 .timer-box b{
 
 
@@ -1525,6 +1679,8 @@ font-size:38px;
 
 
 }
+
+
 
 
 
@@ -1538,6 +1694,7 @@ font-size:32px;
 
 
 
+
 .ticket-card{
 
 
@@ -1545,6 +1702,8 @@ padding:30px 20px;
 
 
 }
+
+
 
 
 
@@ -1561,13 +1720,10 @@ gap:8px;
 
 
 
-.hero-corner{
+.hero-side-label{
 
 
-right:20px;
-
-
-top:20px;
+display:none;
 
 
 }
