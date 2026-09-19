@@ -21,36 +21,7 @@
 <body>
 
 
-<!-- INTRO -->
-
-<div class="intro-screen" id="introScreen">
-
-    <div class="intro-content">
-
-        <p class="intro-label">
-            PRIVATE EVENT
-        </p>
-
-
-        <h2>
-            MAXIM<br>
-            KABANKOV
-        </h2>
-
-
-        <p class="intro-date">
-            27.09.2026
-        </p>
-
-
-    </div>
-
-</div>
-
-
-
 <div class="noise"></div>
-
 
 
 <main>
@@ -58,7 +29,6 @@
 
 
 <!-- HERO -->
-
 
 <section class="hero" id="top">
 
@@ -74,31 +44,10 @@
 
 
 
-<div class="hero-corner">
-
-<span>27</span>
-
-<span>SEP</span>
-
-<span>2026</span>
-
-</div>
-
-
-
-<div class="hero-side-label">
-
-PRIVATE EVENT / BLACK & WHITE
-
-</div>
-
-
-
-
 <div class="hero-content">
 
 
-<p class="label">
+<p class="hero-mini">
 
 PRIVATE EVENT
 
@@ -109,7 +58,9 @@ PRIVATE EVENT
 
 <h1>
 
-MAXIM<br>
+MAXIM
+
+<br>
 
 <span>KABANKOV</span>
 
@@ -118,9 +69,14 @@ MAXIM<br>
 
 
 
+<div class="hero-line"></div>
+
+
+
+
 <p class="hero-subtitle">
 
-BIRTHDAY NIGHT
+BLACK & WHITE PARTY
 
 </p>
 
@@ -129,9 +85,9 @@ BIRTHDAY NIGHT
 
 <p class="invite-text">
 
-Приглашаю тебя на свой день рождения.<br>
+Приглашаю тебя на мой день рождения.<br>
 
-Один вечер. Свои люди. Своя атмосфера.
+27 сентября • 14:00
 
 </p>
 
@@ -159,7 +115,7 @@ BIRTHDAY NIGHT
 
 <div class="hero-pill">
 
-BLACK & WHITE
+PRIVATE EVENT
 
 </div>
 
@@ -169,6 +125,22 @@ BLACK & WHITE
 
 
 </div>
+
+
+
+
+
+<div class="hero-corner">
+
+2026
+
+<br>
+
+27 SEP
+
+</div>
+
+
 
 
 </section>
@@ -222,7 +194,6 @@ COUNTDOWN
 </span>
 
 </div>
-
 
 
 
@@ -402,7 +373,6 @@ target="_blank">
 </section>
 <!-- DRESS CODE -->
 
-
 <section class="dress-section">
 
 
@@ -431,17 +401,11 @@ AND WHITE
 
 <p>
 
-Чёрный.<br>
+Вечеринка в стиле BLACK & WHITE.<br><br>
 
-Белый.<br>
+Чёрный. Белый. Твой стиль.<br>
 
-Твой стиль.
-
-<br><br>
-
-Без лишних цветов.
-
-Только атмосфера вечера.
+Поддержи атмосферу вечера.
 
 </p>
 
@@ -472,7 +436,7 @@ AND WHITE
 
 
 
-<!-- INVITATION TICKET -->
+<!-- TICKET -->
 
 
 <section class="ticket-section">
@@ -522,25 +486,34 @@ KABANKOV
 <div>
 
 <span>
+
 DATE
+
 </span>
 
 <b>
+
 27.09.2026
+
 </b>
 
 </div>
 
 
 
+
 <div>
 
 <span>
+
 TIME
+
 </span>
 
 <b>
+
 14:00
+
 </b>
 
 </div>
@@ -551,11 +524,15 @@ TIME
 <div>
 
 <span>
-LOCATION
+
+PLACE
+
 </span>
 
 <b>
+
 ХИЖИНА КАБАНА
+
 </b>
 
 </div>
@@ -620,9 +597,7 @@ CONFIRMATION
 
 
 
-
 <form id="rsvpForm" class="rsvp-form">
-
 
 
 
@@ -668,6 +643,7 @@ placeholder="Количество гостей"
 </option>
 
 
+
 <option value="no">
 
 Не смогу прийти
@@ -676,7 +652,6 @@ placeholder="Количество гостей"
 
 
 </select>
-
 
 
 
@@ -703,13 +678,12 @@ placeholder="Комментарий">
 
 
 
-
 <p id="formMessage"></p>
 
 
 
-
 </form>
+
 
 
 </section>
@@ -729,8 +703,7 @@ placeholder="Комментарий">
 
 
 
-
-<!-- SUCCESS POPUP -->
+<!-- SUCCESS -->
 
 
 <div class="success-overlay" id="successOverlay">
@@ -759,7 +732,6 @@ CONFIRMED
 
 
 
-
 <h3>
 
 ТЫ В СПИСКЕ 🖤
@@ -769,21 +741,11 @@ CONFIRMED
 
 
 
-
 <p class="success-text">
 
+Место забронировано.<br><br>
 
-Место забронировано.
-
-
-<br><br>
-
-
-Увидимся
-
-
-<br>
-
+Увидимся<br>
 
 <strong>
 
@@ -791,9 +753,7 @@ CONFIRMED
 
 </strong>
 
-
 <br>
-
 
 <strong>
 
@@ -801,15 +761,12 @@ CONFIRMED
 
 </strong>
 
-
 </p>
 
 
 
 
-
 <div class="success-event">
-
 
 BLACK & WHITE PARTY
 
@@ -817,9 +774,7 @@ BLACK & WHITE PARTY
 
 MAXIM KABANKOV
 
-
 </div>
-
 
 
 
@@ -839,7 +794,6 @@ type="button">
 
 
 
-
 </div>
 
 
@@ -851,17 +805,14 @@ type="button">
 
 
 
-<!-- MUSIC -->
 
-
-<audio id="bgMusic" autoplay loop>
+<audio id="bgMusic" loop>
 
 
 <source src="party.mp3" type="audio/mpeg">
 
 
 </audio>
-
 
 
 
