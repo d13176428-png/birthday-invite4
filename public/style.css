@@ -1731,3 +1731,103 @@ display:none;
 
 
 }
+/* =====================
+ PREMIUM POSTER DETAILS
+===================== */
+
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+inset:25px;
+
+border:1px solid rgba(255,255,255,.12);
+
+pointer-events:none;
+
+z-index:4;
+
+}
+
+
+
+.hero h1{
+
+text-shadow:
+
+0 0 40px rgba(255,255,255,.08);
+
+}
+
+
+
+.hero-mini::after{
+
+content:" / MOSCOW REGION";
+
+color:#666;
+
+}
+
+
+
+
+
+.hero::before{
+
+content:"ONLY INVITED GUESTS";
+
+position:absolute;
+
+bottom:45px;
+
+right:45px;
+
+font-size:10px;
+
+letter-spacing:6px;
+
+color:rgba(255,255,255,.35);
+
+z-index:5;
+
+}
+
+
+
+.hero-number{
+
+text-shadow:
+
+0 0 40px rgba(255,255,255,.15);
+
+}
+
+
+
+
+
+/* дополнительный дым */
+
+.hero-smoke-1{
+
+animation:
+
+smokeLeft 18s infinite alternate ease-in-out;
+
+}
+
+
+
+.hero-smoke-2{
+
+animation:
+
+smokeRight 22s infinite alternate ease-in-out;
+
+}
+
+
