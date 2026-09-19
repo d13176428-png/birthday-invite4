@@ -1,66 +1,104 @@
 // =========================
-// ТАЙМЕР
+// INTRO SCREEN
 // =========================
 
-const partyDate = new Date("2026-09-27T14:00:00+03:00");
+
+const introScreen = document.getElementById("introScreen");
+
+
+if(introScreen){
+
+    setTimeout(()=>{
+
+        introScreen.classList.add("hide");
+
+    },2500);
+
+}
+
+
+
+
+
+
+// =========================
+// COUNTDOWN
+// =========================
+
+
+const partyDate = new Date(
+    "2026-09-27T14:00:00+03:00"
+);
+
 
 
 function updateTimer(){
 
+
     const now = new Date();
+
 
     const diff = partyDate - now;
 
 
+
     if(diff <= 0){
 
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
+        document.getElementById("days").textContent="00";
+        document.getElementById("hours").textContent="00";
+        document.getElementById("minutes").textContent="00";
+        document.getElementById("seconds").textContent="00";
 
         return;
 
     }
 
 
+
+
     const days = Math.floor(
-        diff / (1000 * 60 * 60 * 24)
+        diff / (1000*60*60*24)
     );
 
 
     const hours = Math.floor(
-        diff / (1000 * 60 * 60) % 24
+        diff / (1000*60*60)%24
     );
 
 
     const minutes = Math.floor(
-        diff / (1000 * 60) % 60
+        diff / (1000*60)%60
     );
 
 
     const seconds = Math.floor(
-        diff / 1000 % 60
+        diff / 1000%60
     );
 
 
 
+
     document.getElementById("days").textContent =
-        String(days).padStart(2,"0");
+    String(days).padStart(2,"0");
+
 
 
     document.getElementById("hours").textContent =
-        String(hours).padStart(2,"0");
+    String(hours).padStart(2,"0");
+
 
 
     document.getElementById("minutes").textContent =
-        String(minutes).padStart(2,"0");
+    String(minutes).padStart(2,"0");
+
 
 
     document.getElementById("seconds").textContent =
-        String(seconds).padStart(2,"0");
+    String(seconds).padStart(2,"0");
+
 
 }
+
 
 
 setInterval(updateTimer,1000);
@@ -71,12 +109,16 @@ updateTimer();
 
 
 
+
+
 // =========================
-// МУЗЫКА
+// MUSIC FADE IN
 // =========================
+
 
 
 const music = document.getElementById("bgMusic");
+
 
 
 if(music){
@@ -86,9 +128,7 @@ if(music){
 
 
 
-    window.addEventListener(
-        "load",
-        async()=>{
+    window.addEventListener("load", async()=>{
 
 
         try{
@@ -128,27 +168,25 @@ if(music){
                 }
 
 
+
             },100);
 
 
 
         }
 
-
         catch(error){
 
 
             console.log(
-                "Автозапуск музыки запрещён браузером"
+                "Автозапуск музыки заблокирован"
             );
 
 
         }
 
 
-
     });
-
 
 
 }
@@ -158,30 +196,36 @@ if(music){
 
 
 
+
+
 // =========================
-// ФОРМА TELEGRAM
+// SUCCESS POPUP
 // =========================
+
 
 
 const form =
 document.getElementById("rsvpForm");
 
 
-const message =
-document.getElementById("formMessage");
-
-
-const button =
-document.getElementById("submitBtn");
-
-
-
 const popup =
 document.getElementById("successOverlay");
 
 
-const closePopup =
+
+const closeBtn =
 document.getElementById("closeSuccessBtn");
+
+
+
+const message =
+document.getElementById("formMessage");
+
+
+
+const submitBtn =
+document.getElementById("submitBtn");
+
 
 
 
@@ -201,7 +245,7 @@ function openPopup(){
 
 
 
-function closePopupFunc(){
+function closePopup(){
 
 
     if(popup){
@@ -215,36 +259,52 @@ function closePopupFunc(){
 
 
 
-if(closePopup){
 
-    closePopup.addEventListener(
+if(closeBtn){
+
+
+    closeBtn.addEventListener(
         "click",
-        closePopupFunc
+        closePopup
     );
 
+
 }
+
+
 
 
 
 if(popup){
 
+
     popup.addEventListener(
         "click",
-        function(e){
+        (e)=>{
+
 
             if(e.target === popup){
 
-                closePopupFunc();
+                closePopup();
 
             }
 
+
         }
     );
+
 
 }
 
 
 
+
+
+
+
+// =========================
+// FORM
+// =========================
 
 
 
@@ -254,10 +314,11 @@ if(form){
 
 form.addEventListener(
 "submit",
-async function(e){
+async(e)=>{
 
 
 e.preventDefault();
+
 
 
 
@@ -265,7 +326,7 @@ const data = {
 
 
 name:
-document.getElementById("name").value,
+document.getElementById("name").value.trim(),
 
 
 guests:
@@ -277,7 +338,7 @@ document.getElementById("status").value,
 
 
 comment:
-document.getElementById("comment").value
+document.getElementById("comment").value.trim()
 
 
 };
@@ -285,7 +346,8 @@ document.getElementById("comment").value
 
 
 
-if(!data.name.trim()){
+
+if(!data.name){
 
 
 message.textContent =
@@ -300,11 +362,15 @@ return;
 
 
 
-button.disabled = true;
+
+submitBtn.disabled=true;
 
 
-button.textContent =
+submitBtn.textContent=
 "ОТПРАВКА...";
+
+
+
 
 
 
@@ -336,6 +402,8 @@ JSON.stringify(data)
 
 
 
+
+
 const result =
 await response.json();
 
@@ -347,7 +415,7 @@ if(result.ok){
 
 
 message.textContent =
-"Отправлено ✓";
+"Готово ✓";
 
 
 form.reset();
@@ -356,8 +424,9 @@ form.reset();
 openPopup();
 
 
-
 }
+
+
 
 else{
 
@@ -371,9 +440,8 @@ message.textContent =
 
 
 
+
 }
-
-
 
 catch(error){
 
@@ -393,10 +461,10 @@ message.textContent =
 finally{
 
 
-button.disabled = false;
+submitBtn.disabled=false;
 
 
-button.textContent =
+submitBtn.textContent=
 "ПОДТВЕРДИТЬ УЧАСТИЕ";
 
 
